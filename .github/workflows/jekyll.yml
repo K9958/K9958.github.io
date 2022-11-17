@@ -18,25 +18,25 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build-deploy:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@v2
-
-      - name: Get cached gems
-        uses: actions/cache@v2
-        with:
-          path: vendor/bundle
-          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-gems-
-      - name: Build and deploy
-        uses: helaili/jekyll-action@v2
-        with:
-          token: ${{ secrets.GH_BEST }}
-          target_branch: 'gh-pages'
+  #build-deploy:
+   # runs-on: ubuntu-latest
+#
+ #   steps:
+  #    - name: Checkout repo
+   #     uses: actions/checkout@v2
+#
+ #     - name: Get cached gems
+  #      uses: actions/cache@v2
+   #     with:
+    #      path: vendor/bundle
+     #     key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
+      #    restore-keys: |
+       #     ${{ runner.os }}-gems-
+  #    - name: Build and deploy
+   #     uses: helaili/jekyll-action@v2
+    #    with:
+     #     token: ${{ secrets.GH_BEST }}
+      #    target_branch: 'gh-pages'
 
   build_2:
     runs-on: ubuntu-latest
