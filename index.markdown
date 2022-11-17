@@ -4,6 +4,9 @@
 title: "Hi, I'm Kristian!"
 author_profile: true
 related: false
+header:
+  overlay_image: "/assets/coding.jpg"
+  caption: "Photo by **Michael Pointner**"
 ---
 
 
