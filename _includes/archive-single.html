@@ -16,7 +16,7 @@
       <div class="archive__item-teaser">
         <img src="{{ teaser | relative_url }}" alt="">
       </div>
-    {% else if include.type == "list" and teaser %}
+    {% elsif include.type == "list" and teaser %}
       <div style="float: left;">
         <img src="{{ teaser | relative_url }}" style="float: left;" style="max-height: 100px;" alt="">
       </div>
