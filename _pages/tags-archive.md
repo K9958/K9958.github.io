@@ -1,7 +1,6 @@
 ---
-title: "Posts by Tag"
+title: "Projects by tag"
 permalink: /tags/
 layout: tags
 author_profile: true
-collection: portfolio
 ---
