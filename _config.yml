@@ -107,15 +107,15 @@ author:
   name             : "Kristian Kantola"
   avatar           : "/assets/portrait.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "I am an ambitious ICT Engineering student at JAMK. Quick to learn, fast to adapt."
-  location         : 
-  email            :
+  location         : "Jyväskylä, Finland"
+  email            : 
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
-      # url: "mailto:your.name@email.com"
+      url: "mailto:K9958@student.jamk.fi"
     - label: "Website"
       icon: "fas fa-fw fa-link"
-      # url: "https://your-website.com"
+      url: "https://kantola.eu"
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
       # url: "https://twitter.com/"
