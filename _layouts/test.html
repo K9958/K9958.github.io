@@ -1,0 +1,17 @@
+{% for eachCat in allCats %}
+  {% for post in thisCollection %}
+    
+    {% if post.categories contains eachCat.name %}
+
+      {% assign thisCat = eachCat.name | append: '|' %}
+
+      {% if category_array contains thisCat %}
+        <!-- Apply your code here to display the category list -->
+        <h1> test </h1>
+      {% endif %}
+
+      {% assign category_array = category_array | remove: thisCat %}
+    {% endif %}
+
+  {% endfor %}
+{% endfor %}
