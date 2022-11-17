@@ -8,5 +8,3 @@ classes: wide
 author_profile: true
 related: true
 ---
-
-Sample document listing for the collection `_portfolio`.
