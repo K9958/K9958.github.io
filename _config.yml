@@ -269,11 +269,6 @@ jekyll-archives:
     tag: '/tag/:name/'
     category: '/category/:name/'
 
-collections:
-  portfolio:
-    output: true
-    permalink: /:collection/:path/
-
 # HTML Compression
 # - https://jch.penibelst.de/
 compress_html:
@@ -284,7 +279,7 @@ compress_html:
 
 # Defaults
 defaults:
-  # _portfolio
+  # _posts
   - scope:
       path: ""
       type: posts
