@@ -3,9 +3,6 @@ title: Portfolio entry two
 categories:
   - portfolio
 tags:
-  - project
-  - portfolio
-  - ci
   - production
 ---
 
