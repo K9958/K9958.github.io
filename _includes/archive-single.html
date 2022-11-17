@@ -18,7 +18,7 @@
       </div>
     {% elsif include.type == "list" and teaser %}
       <div style="float: left;">
-        <img src="{{ teaser | relative_url }}" style="float: left;" style="max-height: 100px;" alt="">
+        <img src="{{ teaser | relative_url }}" style="float: left; max-width:200px; margin-right: 1em;" alt="">
       </div>
     {% endif %}
     <h2 class="archive__item-title no_toc" itemprop="headline">
