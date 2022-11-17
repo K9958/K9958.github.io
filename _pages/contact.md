@@ -3,4 +3,4 @@ title: Contact
 permalink: /contact/
 ---
 
-This is my contact page
+Email: [k9958@student.jamk.fi](mailto:k9958@student.jamk.fi)
