@@ -1,0 +1,12 @@
+# main links
+main:
+  - title: "Home"
+    url: /
+  - title: "Portfolio"
+    url: /portfolio/
+  - title: "Contact"
+    url: /Contact/
+  # - title: "Sample Collections"
+  #   url: /collection-archive/
+  # - title: "Sitemap"
+  #   url: /sitemap/
