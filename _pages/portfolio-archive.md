@@ -2,8 +2,8 @@
 title: Portfolio
 layout: collection
 permalink: /portfolio/
-collection: portfolio
-entries_layout: grid
+collection: posts
+entries_layout: list
 classes: wide
 author_profile: true
 related: true
