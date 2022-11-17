@@ -105,8 +105,8 @@ analytics:
 # Site Author
 author:
   name             : "Kristian Kantola"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "I am an ambitious student at JAMK. Quick to learn, fast to adapt."
+  avatar           : "/assets/portrait.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  bio              : "I am an ambitious ICT Engineering student at JAMK. Quick to learn, fast to adapt."
   location         : 
   email            :
   links:
