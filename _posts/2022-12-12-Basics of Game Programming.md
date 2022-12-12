@@ -31,20 +31,26 @@ gallery5:
     alt: "Picture5"
     title: "Picture5"
 gallery6:
-  - url: /assets/bgpimages/Picture6.png
-    image_path: /assets/bgpimages/Picture6.png
-    alt: "Picture6"
-    title: "Picture6"
-gallery7:
   - url: /assets/bgpimages/Picture7.png
     image_path: /assets/bgpimages/Picture7.png
     alt: "Picture7"
     title: "Picture7"
-gallery8:
   - url: /assets/bgpimages/Picture8.png
     image_path: /assets/bgpimages/Picture8.png
     alt: "Picture8"
     title: "Picture8"
+  - url: /assets/bgpimages/Picture9.png
+    image_path: /assets/bgpimages/Picture9.png
+    alt: "Picture9"
+    title: "Picture9"
+  - url: /assets/bgpimages/Picture10.png
+    image_path: /assets/bgpimages/Picture10.png
+    alt: "Picture10"
+    title: "Picture10"
+  - url: /assets/bgpimages/Picture11.png
+    image_path: /assets/bgpimages/Picture11.png
+    alt: "Picture11"
+    title: "Picture11"
 ---
 
 During the course of Basics of Game Programming I managed to grasp a lot of different concepts of Game Programming and Development. Here's a brief list of what I used and learned:
@@ -72,7 +78,7 @@ There is images to visualize the different functionalities that I coded. The gam
 
 ### Hotbar and GUI
 
-{% include gallery id="gallery1" %}
+{% include gallery id="gallery1" layout="full" %}
 
 I coded a hotbar system that can take consumable items and weapons such as bullets and stores them on separate inventories. Bullets will be visualized on different slots than weapons. Active weapons will show their current magazine bullet count.
 
@@ -80,7 +86,7 @@ The GUI holds also players health icon. The heart icon color will be set darker 
 
 ### Main Menu
 
-{% include gallery id="gallery2" %}
+{% include gallery id="gallery2" class="full" %}
 
 ![alt]({{ site.url }}{{ site.baseurl }}/assets/bgpimages/Picture2.png)
 
