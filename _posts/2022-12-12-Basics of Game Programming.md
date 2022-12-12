@@ -9,48 +9,57 @@ tags:
 gallery1:
   - url: /assets/bgpimages/Picture1.png
     image_path: /assets/bgpimages/Picture1.png
-    alt: "Picture1"
-    title: "Picture1"
+    alt: "View of the GUI"
+    title: "View of the GUI"
   - url: /assets/bgpimages/Picture4.png
     image_path: /assets/bgpimages/Picture4.png
-    alt: "Picture4"
-    title: "Picture4"
+    alt: "Start of the game"
+    title: "Start of the game. Player is in noncombat-mode"
 gallery2:
   - url: /assets/bgpimages/Picture2.png
     image_path: /assets/bgpimages/Picture2.png
-    alt: "Picture2"
-    title: "Picture2"
+    alt: "Main Menu Scene"
+    title: "Main Menu Scene"
 gallery3:
   - url: /assets/bgpimages/Picture3.png
     image_path: /assets/bgpimages/Picture3.png
-    alt: "Picture3"
-    title: "Picture3"
+    alt: "Intro screen"
+    title: "Intro screen"
 gallery5:
   - url: /assets/bgpimages/Picture5.png
     image_path: /assets/bgpimages/Picture5.png
-    alt: "Picture5"
-    title: "Picture5"
+    alt: "Player aiming a gun at zombie"
+    title: "Player aiming a gun at zombie"
+  - url: /assets/bgpimages/Picture6.png
+    image_path: /assets/bgpimages/Picture6.png
+    alt: "Zombie Action!"
+    title: "Zombie Action!"
 gallery6:
   - url: /assets/bgpimages/Picture7.png
     image_path: /assets/bgpimages/Picture7.png
-    alt: "Picture7"
-    title: "Picture7"
+    alt: "Image of the Unity Editor"
+    title: "Image of the Unity Editor"
   - url: /assets/bgpimages/Picture8.png
     image_path: /assets/bgpimages/Picture8.png
-    alt: "Picture8"
-    title: "Picture8"
+    alt: "Image of the Unity Hierarchy window"
+    title: "Image of the Unity Hierarchy window"
   - url: /assets/bgpimages/Picture9.png
     image_path: /assets/bgpimages/Picture9.png
-    alt: "Picture9"
-    title: "Picture9"
+    alt: "Picture of Player Inspector view"
+    title: "Picture of Player Inspector view"
   - url: /assets/bgpimages/Picture10.png
     image_path: /assets/bgpimages/Picture10.png
-    alt: "Picture10"
-    title: "Picture10"
+    alt: "Picture of Zombie Inspector view"
+    title: "Picture of Zombie Inspector view"
   - url: /assets/bgpimages/Picture11.png
     image_path: /assets/bgpimages/Picture11.png
-    alt: "Picture11"
-    title: "Picture11"
+    alt: "Image of the level. Designed by Juha-Matti Hietala."
+    title: "Image of the level. Designed by Juha-Matti Hietala."
+gallery7:
+  - url: /assets/bgpimages/Picture12.png
+    image_path: /assets/bgpimages/Picture12.png
+    alt: "Git Insights"
+    title: "Git Insights"
 ---
 
 During the course of Basics of Game Programming I managed to grasp a lot of different concepts of Game Programming and Development. Here's a brief list of what I used and learned:
@@ -88,25 +97,19 @@ The GUI holds also players health icon. The heart icon color will be set darker 
 
 {% include gallery id="gallery2" class="full" %}
 
-![alt]({{ site.url }}{{ site.baseurl }}/assets/bgpimages/Picture2.png)
-
 I animated a main menu with characters. Character animations are from Adobe Mixamo. The campfire light is also animated.
 
 ### Game intro
 
 {% include gallery id="gallery3" class="full" %}
 
-![alt]({{ site.url }}{{ site.baseurl }}/assets/bgpimages/Picture3.png)
-
 I created an intro animation with animated text on a black screen.
 
 ## Player states and Enemy AI
 
-![alt]({{ site.url }}{{ site.baseurl }}/assets/bgpimages/Picture5.png)
+{% include gallery id="gallery5" class="full" %}
 
 Player has two main animation states. First when player is not holding a weapon and second when player is holding a weapon. Im non-wield mode Player will be rotated towards his movement. In wielding mode the player is always rotated towards the mouse, where player is pointing his weapon at.
-
-![alt]({{ site.url }}{{ site.baseurl }}/assets/bgpimages/Picture6.png)
 
 Enemies will wander player is far enough. If the player comes in range, the enemies start to run towards the player. When they reach attacking distance, the enemies will start attacking the player. If the player outruns and goes far enough the enemies, they stop pursuing the player.
 
@@ -115,10 +118,13 @@ Note in the image the player HUD change with damage.
 ## Other screenshots of the prototype
 
 ### Unity editor view
-![alt]({{ site.url }}{{ site.baseurl }}/assets/bgpimages/Picture7.png)
 
-![alt]({{ site.url }}{{ site.baseurl }}/assets/bgpimages/Picture8.png)
-![alt]({{ site.url }}{{ site.baseurl }}/assets/bgpimages/Picture9.png)
-![alt]({{ site.url }}{{ site.baseurl }}/assets/bgpimages/Picture10.png)
-![alt]({{ site.url }}{{ site.baseurl }}/assets/bgpimages/Picture11.png)
-![alt]({{ site.url }}{{ site.baseurl }}/assets/bgpimages/Picture12.png)
+{% include gallery id="gallery6" class="full" %}
+
+Here's some images of the development environment.
+
+### Git Insights
+
+{% include gallery id="gallery7" class="full" %}
+
+I coded about 2000 rows and did about 350 commits to the game prototype project :)
