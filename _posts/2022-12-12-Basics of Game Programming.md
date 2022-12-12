@@ -30,21 +30,37 @@ During the course of Basics of Game Programming I managed to grasp a lot of diff
 ## Images with captions
 
 ### Hotbar
-![](./Picture1.png)
-I coded a hotbar system that can take consumable items and weapons such as bullets and stores them on separate 
+![alt]({{ site.url }}{{ site.baseurl }}/assets/bgpimages/Picture1.png)
 
-![alt]({{ site.url }}{{ site.baseurl }}/assets/images/Picture1.png)
-![alt]({{ site.url }}{{ site.baseurl }}/assets/images/Picture2.png)
-![alt]({{ site.url }}{{ site.baseurl }}/assets/images/Picture3.png)
-![alt]({{ site.url }}{{ site.baseurl }}/assets/images/Picture4.png)
-![alt]({{ site.url }}{{ site.baseurl }}/assets/images/Picture5.png)
-![alt]({{ site.url }}{{ site.baseurl }}/assets/images/Picture6.png)
-![alt]({{ site.url }}{{ site.baseurl }}/assets/images/Picture7.png)
-![alt]({{ site.url }}{{ site.baseurl }}/assets/images/Picture8.png)
-![alt]({{ site.url }}{{ site.baseurl }}/assets/images/Picture9.png)
-![alt]({{ site.url }}{{ site.baseurl }}/assets/images/Picture10.png)
-![alt]({{ site.url }}{{ site.baseurl }}/assets/images/Picture11.png)
-![alt]({{ site.url }}{{ site.baseurl }}/assets/images/Picture12.png)
+I coded a hotbar system that can take consumable items and weapons such as bullets and stores them on separate inventories. Bullets will be visualized on different slots than weapons. Active weapons will show their current magazine bullet count.
+
+### Main Menu
+![alt]({{ site.url }}{{ site.baseurl }}/assets/bgpimages/Picture2.png)
+
+I animated a main menu with characters. Character animatios are from Adobe Mixamo. The campfire light is also animated.
+
+### Game intro
+![alt]({{ site.url }}{{ site.baseurl }}/assets/bgpimages/Picture3.png)
+
+I created an intro animation with animated text on a black screen.
+
+
+
+###
+
+![alt]({{ site.url }}{{ site.baseurl }}/assets/bgpimages/Picture4.png)
+
+
+
+
+![alt]({{ site.url }}{{ site.baseurl }}/assets/bgpimages/Picture5.png)
+![alt]({{ site.url }}{{ site.baseurl }}/assets/bgpimages/Picture6.png)
+![alt]({{ site.url }}{{ site.baseurl }}/assets/bgpimages/Picture7.png)
+![alt]({{ site.url }}{{ site.baseurl }}/assets/bgpimages/Picture8.png)
+![alt]({{ site.url }}{{ site.baseurl }}/assets/bgpimages/Picture9.png)
+![alt]({{ site.url }}{{ site.baseurl }}/assets/bgpimages/Picture10.png)
+![alt]({{ site.url }}{{ site.baseurl }}/assets/bgpimages/Picture11.png)
+![alt]({{ site.url }}{{ site.baseurl }}/assets/bgpimages/Picture12.png)
 ![](./Picture2.png)
 ![](./Picture3.png)
 ![](./Picture4.png)
