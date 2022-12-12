@@ -27,9 +27,24 @@ During the course of Basics of Game Programming I managed to grasp a lot of diff
     - Health, damage and death
     - Enemy Spawner with states
 
-## Images
+## Images with captions
 
+### Hotbar
 ![](./Picture1.png)
+I coded a hotbar system that can take consumable items and weapons such as bullets and stores them on separate 
+
+![alt]({{ site.url }}{{ site.baseurl }}/assets/images/Picture1.png)
+![alt]({{ site.url }}{{ site.baseurl }}/assets/images/Picture2.png)
+![alt]({{ site.url }}{{ site.baseurl }}/assets/images/Picture3.png)
+![alt]({{ site.url }}{{ site.baseurl }}/assets/images/Picture4.png)
+![alt]({{ site.url }}{{ site.baseurl }}/assets/images/Picture5.png)
+![alt]({{ site.url }}{{ site.baseurl }}/assets/images/Picture6.png)
+![alt]({{ site.url }}{{ site.baseurl }}/assets/images/Picture7.png)
+![alt]({{ site.url }}{{ site.baseurl }}/assets/images/Picture8.png)
+![alt]({{ site.url }}{{ site.baseurl }}/assets/images/Picture9.png)
+![alt]({{ site.url }}{{ site.baseurl }}/assets/images/Picture10.png)
+![alt]({{ site.url }}{{ site.baseurl }}/assets/images/Picture11.png)
+![alt]({{ site.url }}{{ site.baseurl }}/assets/images/Picture12.png)
 ![](./Picture2.png)
 ![](./Picture3.png)
 ![](./Picture4.png)
