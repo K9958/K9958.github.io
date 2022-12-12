@@ -73,7 +73,7 @@ There is images to visualize the different functionalities that I coded. The gam
 
 ### Hotbar and GUI
 
-{% include gallery %}
+{% include gallery id="gallery1" %}
 
 ![alt]({{ site.url }}{{ site.baseurl }}/assets/bgpimages/Picture1.png)
 
@@ -89,7 +89,7 @@ The GUI holds also players health icon. The heart icon color will be set darker 
 
 ![alt]({{ site.url }}{{ site.baseurl }}/assets/bgpimages/Picture2.png)
 
-I animated a main menu with characters. Character animatios are from Adobe Mixamo. The campfire light is also animated.
+I animated a main menu with characters. Character animations are from Adobe Mixamo. The campfire light is also animated.
 
 ### Game intro
 
@@ -121,14 +121,3 @@ Note in the image the player HUD change with damage.
 ![alt]({{ site.url }}{{ site.baseurl }}/assets/bgpimages/Picture10.png)
 ![alt]({{ site.url }}{{ site.baseurl }}/assets/bgpimages/Picture11.png)
 ![alt]({{ site.url }}{{ site.baseurl }}/assets/bgpimages/Picture12.png)
-![](./Picture2.png)
-![](./Picture3.png)
-![](./Picture4.png)
-![](./Picture5.png)
-![](./Picture6.png)
-![](./Picture7.png)
-![](./Picture8.png)
-![](./Picture9.png)
-![](./Picture10.png)
-![](./Picture11.png)
-![](./Picture12.png)
