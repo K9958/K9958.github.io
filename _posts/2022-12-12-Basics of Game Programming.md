@@ -64,14 +64,16 @@ gallery7:
 
 During the course of Basics of Game Programming I managed to grasp a lot of different concepts of Game Programming and Development. Here's a brief list of what I used and learned:
 
--	Creating menus and panels with animations
--	Animating characters with ready-made animations from Adobe Mixamo. Edit-ing animations with UMotion (from Unity Asset Store)
--	Using animation events with animations
+- Using many different [Unity API](https://docs.unity3d.com/ScriptReference/) methods
 -	Using ready-made prefabs and using them via scripts
 -	Using ready-made sounds and music, and managing them via scripts
--	Using different Unity Packages such as Cinemachine, Input System, Mecanim, Particle Pack
--	Using Navigation mesh and Navigation mesh agents
--	Different functionalities such as:
+-	Using different Unity Packages such as Cinemachine, [Input System](https://docs.unity3d.com/Packages/com.unity.inputsystem@1.4/manual/QuickStartGuide.html), Mecanim and Animation Rigging, [Particle Pack](https://assetstore.unity.com/packages/essentials/asset-packs/unity-particle-pack-5-x-73777)
+-	Using [Navigation mesh](https://docs.unity3d.com/Manual/Navigation.html) and Navigation mesh agents
+-	Creating menus and panels with animations
+-	Animating characters with ready-made animations from Adobe Mixamo. Editing animations with [UMotion](https://assetstore.unity.com/packages/tools/animation/umotion-pro-animation-editor-95991)
+-	Using animation events with animations
+- [Inverse Kinematics](https://docs.unity3d.com/Manual/InverseKinematics.html) to constrain animations
+-	Coding different functionalities such as:
     - player movement and jump
     - item pickup and inventory system
     - Creating and managing a GUI (item hotbar, health)
@@ -81,7 +83,7 @@ During the course of Basics of Game Programming I managed to grasp a lot of diff
     - Health, damage and death
     - Enemy Spawner with states
 
-## Images with captions
+## Game Prototype images with captions
 
 There is images to visualize the different functionalities that I coded. The game shown is a prototype project game that can be downloaded from here: [Saving Steve](https://kantola.eu/files/savingsteve.zip)
 
