@@ -11,6 +11,10 @@ gallery1:
     image_path: /assets/bgpimages/Picture1.png
     alt: "Picture1"
     title: "Picture1"
+  - url: /assets/bgpimages/Picture4.png
+    image_path: /assets/bgpimages/Picture4.png
+    alt: "Picture4"
+    title: "Picture4"
 gallery2:
   - url: /assets/bgpimages/Picture2.png
     image_path: /assets/bgpimages/Picture2.png
@@ -21,11 +25,6 @@ gallery3:
     image_path: /assets/bgpimages/Picture3.png
     alt: "Picture3"
     title: "Picture3"
-gallery4:
-  - url: /assets/bgpimages/Picture4.png
-    image_path: /assets/bgpimages/Picture4.png
-    alt: "Picture4"
-    title: "Picture4"
 gallery5:
   - url: /assets/bgpimages/Picture5.png
     image_path: /assets/bgpimages/Picture5.png
@@ -75,11 +74,7 @@ There is images to visualize the different functionalities that I coded. The gam
 
 {% include gallery id="gallery1" %}
 
-![alt]({{ site.url }}{{ site.baseurl }}/assets/bgpimages/Picture1.png)
-
 I coded a hotbar system that can take consumable items and weapons such as bullets and stores them on separate inventories. Bullets will be visualized on different slots than weapons. Active weapons will show their current magazine bullet count.
-
-![alt]({{ site.url }}{{ site.baseurl }}/assets/bgpimages/Picture4.png)
 
 The GUI holds also players health icon. The heart icon color will be set darker and smaller with damage. There is also a skeleton image that will be shown gradually over the players avatar image.
 
