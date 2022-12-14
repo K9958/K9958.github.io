@@ -86,7 +86,16 @@ galleryhaasteet:
     image_path: assets/images/3d/33ApplyBooleanAddMaterial.png
     alt: "..ja takaisin laittaminen"
     title: "..ja takaisin laittaminen"
+
+gallerypuut:
+  - url: assets/images/3d/33ApplyBooleanAddMaterial.png
+    image_path: assets/images/3d/33ApplyBooleanAddMaterial.png
+    alt: "..ja takaisin laittaminen"
+    title: "..ja takaisin laittaminen"
+
 ---
+
+
 
 # Tehtävä
 
@@ -94,25 +103,44 @@ galleryhaasteet:
 
 # Toteutus
 
-## Aloitus
+## Aloitus ja pohja
 
-Aloitin etsimällä netistä mallia mökille, jonka voisin mallintaa. Löysin sopivan hirsimökkimallin [Karvian Hirsirakentajien sivuilta](https://www.karvianhirsirakentajat.fi/rantasaunat-saunamokit-ja-hirsisaunat/saunamokki-25/). Heillä oli myös pohjapiirros, mitä voisi käyttää mallina. Otin pohjapiirroksen talteen ja aloin mallintamaan perustusta talolle. Mallinsin pohjapiirroksen millimetrin tarkkuudella.
+Aloitin etsimällä netistä mallia mökille, jonka voisin mallintaa. Löysin sopivan hirsimökkimallin [Karvian Hirsirakentajien sivuilta](https://www.karvianhirsirakentajat.fi/rantasaunat-saunamokit-ja-hirsisaunat/saunamokki-25/). Heillä oli myös pohjapiirros, mitä voisi käyttää mallina. Otin pohjapiirroksen talteen ja aloin mallintamaan perustusta talolle. Mallinsin pohjapiirroksen millimetrin tarkkuudella. Rajoitin mallinnukseni rakennuksen julkisivuun, jättämällä sisäpuolen mallintamatta.
 
 {% include gallery id="galleryaloitus" %}
 
-### Seinät
+## Seinät
 
-Hirsimökin seinät mallinsin *Arrayksi* asetetuista hirsistä, jotka mallinsin sylinteristä (ks galleria). 
+Hirsimökin seinät mallinsin *Arrayksi* asetetuista hirsistä, jotka mallinsin sylinteristä (ks galleria). Hirret pyöristin käyttämällä **Bevel**- sekä **Subdivision surface**-modifierejä. *Mean Crease*-toiminto varmisti, että hirsien päädyt pysyivät tasaisina.
 
 {% include gallery id="galleryseinat" %}
 
-### Ovi ja ikkunat
+## Ovi ja ikkunat
 
 Ovelle ja ikkunoille tein aukot kuutioilla joille asetin **Boolean**-modifierin. Boolean leikkaa aukon toiseen objektiin käyttäen itsensä geometriaa leikkurina.
 
 Kun monistin ikkunoita, tein vielä muutoksia ikkunoiden kopioinnin jälkeen objekteihin. Tämän jälkeen jouduin muuttamaan vielä alkuperäistä objektia. Löysin onneksi **Link object data**-toiminnon, jolla pystyi muuttamaan samalla alkuperäistä objektiakin.
 
 {% include gallery id="galleryikkunat" %}
+
+## Terassi
+
+
+## Katto
+
+
+## Maisema
+
+Kivet generoin maisemaan käyttämällä tuttua **Geometry nodes**-työkalua. Tein työkalun, jolla generoin yksinkertaisista objekteista kuten kuutioista yksityiskohtaisia ja rosoisia kivimalleja. Työkalussa on muutama parametri, joita voi muuttaa ja hienosäätää siten lopputulosta. 
+
+## Puut
+
+Puut generoin käyttämällä Blenderin omaa lisäosaa *Sapling Tree Gen*. Lisäosalla pystyy luomaan erilaisia puupresettejä säätämällä monia puiden ominaisuuksia esim oksien tiheyttä, korkeutta ja haaroitusta. Työkalusta löytyy lukuisien asetusten lisäksi valmiita presettejä. Käytin valmista presettiä sekä omaa luomaa koivujen generointiin. Generoimisen jälkeen muutin puut *Meshiksi* ja loin niille materiaalin yritten jäljitellä oikeaa koivun ulkonäköä.
+
+Lehdet koivuun sain luomalla koivuun **Particle Systeemin**. Tein verteksijoukon koivun oksille, mihin jaoin partikkelit. Partikkelia varten löysin koivun oksan kuvan netistä, jonka asetin partikkeleiden muodoksi. Lopuksi säädin partikkeleiden määrityksiä esim. satunnaisuutta koon ja rotaation suhteen.
+
+
+## Vesi
 
 ## Hasteet
 
@@ -133,6 +161,5 @@ Työ eteni ja onnistui suuremmilta osin hyvin. Olen tyytyväinen lopputulokseen.
 ## Kritiikki
 
 Työssä ehkä heikoin kohta on siinä, että maiseman monimutkaisuus ei jakaannu ihan tasaisesti. Mökki on monimutkaisin osa maisemaa, ja ympäröivä muu maisema ei ole aivan yhtä monimutkainen. Mökkiin onkin käytetty suhteessa eniten ainaa. Ennen kuin tein viimeisen renderöinnin, pienensin näkymää kohdistumaan enemmän mökkiin, että mökki pääsisi paremmin oikeuksiinsa.
-
 
 # Tuntikirjaukset
