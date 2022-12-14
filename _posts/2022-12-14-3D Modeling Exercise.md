@@ -15,11 +15,11 @@ galleryaloitus:
     image_path: assets/images/3d/01Pohjapiirros.png
     alt: "Pohjan mallinnus"
     title: "Pohjan mallinnus"
-    - url: assets/images/3d/Pohjapiirros.png
+  - url: assets/images/3d/Pohjapiirros.png
     image_path: assets/images/3d/Pohjapiirros.png
     alt: "Pohjapiirros"
     title: "Pohjapiirros"
-    - url: assets/images/3d/SaunaMalli.png
+  - url: assets/images/3d/SaunaMalli.png
     image_path: assets/images/3d/SaunaMalli.png
     alt: "Mökin malli"
     title: "Mökin malli"
