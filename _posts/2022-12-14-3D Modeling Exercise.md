@@ -62,15 +62,30 @@ Hirsimökin seinät mallinsin *Arrayksi* asetetuista hirsistä, jotka mallinsin 
 
 Ovelle ja ikkunoille tein aukot kuutioilla joille asetin **Boolean**-modifierin. Boolean leikkaa aukon toiseen objektiin käyttäen itsensä geometriaa leikkurina.
 
-{% include gallery id="galleryaloitus" layout="full" %}
 
-### Itsearviointi
+
+{% include gallery id="galleryaloitus" %}
+
+
+## Hasteet
+
+Alussa en tajunnut sitä miten booleanit toimivat, ja ihmettelin, että boolean-leikkauksen jälkeen leikkauskohdan materiaali on eri kuin mikä leikattavan materiaalin. Tutustuttuani aiheeseen dokumentaation kautta paremmin, tajusin, että booleanit jättävät leikkaavan objektin materiaalin leikattavan objektin leikkauspinnalle.
+
+Kun olin saanut ovet ja ikkunat tehtyä, kokeilin renderöintiä **Cyclesillä** ja huomasin, että ovessa ja ikkunalaudoissa oli mustia raitoja. Eeveellä renderöitäessä ei ollut. Huomasin, että objektin Pivot-pointin eli originin asettaminen saranasta objektin keskelle korjasi osittain mustat raidat tekstuurissa.
+
+Renderöinnissä oli lopuksi haastetta, sillä maisemani oli niin yksityiskohtainen, että yhden kehyksen renderöinti kesti yli 40 minuuttia. Minulla oli animaatioiden vuoksi renderöitäviä kehyksiä 100, joten joko animaatio piti jättää pois, tai keksiä miten renderöintiaikaa saisi pienennettyä. Tuntiopettaja antoi vinkin, että renderöitäviä asioita voi jakaa eri **layereihin** eli kerroksiin. Löysin netistä hieman ohjeita, ja sain objektit jaettua eri kerroksiin ja sain renderöityä kerrokset erikseen ja yhdistettyä **kompositoinnin** avulla.
+
+Renderöinnissä tuli toinenkin ongelma, kun yhden animaation tallennuksen jälkeen tallennustiedostomuodoksi oli vaihtunut PNG ilman alfa-kerrosta, eli toisin sanoen läpinäkymätön kuvamuoto. Tämän jälkeen olin renderöinyt 100 kehystä veden layeriä vain huomatakseni, että kuvissa ei ole ollenkaan läpinäkyvyyttä enkä voi yhdistää kuvia kompositoinnin avulla. Vaihdoin tallennustiedostomuotoa tallentamaan myös läpinäkyvyystiedot, ja jouduin renderöimään nämä 100 kehystä uudelleen.'
+
+{% include gallery id="galleryhaasteet" %}
+
+# Itsearviointi
 
 Työ eteni ja onnistui suuremmilta osin hyvin. Olen tyytyväinen lopputulokseen. Parannettavaa tietenkin on paljon, mutta tähän projektiin tämä on mielestäni riittävä lopputulos. Käytin monimutkaisia tekniikoita esim. Geometry Nodes, ViewLayer-renderöinti, animaation kompositointi, partikkelit. Skulptausta oli hieman myös mukana (maasto). Käytin myös mielestäni tekniikoita suhteellisen monipuolisesti.
 
-#### Kritiikki
+## Kritiikki
 
-Työssä ehkä heikoin kohta on siinä, että maiseman monimutkaisuus ei jakaannu ihan tasaisesti. Mökki on monimutkaisin osa maisemaa, ja ympäröivä muu maisema ei ole aivan yhtä monimutkainen. Myös 
+Työssä ehkä heikoin kohta on siinä, että maiseman monimutkaisuus ei jakaannu ihan tasaisesti. Mökki on monimutkaisin osa maisemaa, ja ympäröivä muu maisema ei ole aivan yhtä monimutkainen. Mökkiin onkin käytetty suhteessa eniten ainaa. Ennen kuin tein viimeisen renderöinnin, pienensin näkymää kohdistumaan enemmän mökkiin, että mökki pääsisi paremmin oikeuksiinsa.
 
 
 # Tuntikirjaukset
