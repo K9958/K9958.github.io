@@ -17,12 +17,12 @@ galleryaloitus:
     title: "Pohjan mallinnus"
     - url: assets/images/3d/Pohjapiirros.png
     image_path: assets/images/3d/Pohjapiirros.png
-    alt: Pohjapiirros
-    title: Pohjapiirros
+    alt: "Pohjapiirros"
+    title: "Pohjapiirros"
     - url: assets/images/3d/SaunaMalli.png
     image_path: assets/images/3d/SaunaMalli.png
-    alt: Mökin malli.
-    title: Mökin malli
+    alt: "Mökin malli"
+    title: "Mökin malli"
 galleryseinat:
   - url: assets/images/3d/02lierioHirreksi.png
     image_path: assets/images/3d/02lierioHirreksi.png
@@ -38,54 +38,54 @@ galleryseinat:
     title: "Hirsistä array"
   - url: assets/images/3d/05hirsitalo.png
     image_path: assets/images/3d/05hirsitalo.png
-    alt: Seinät paikallaan
-    title: Seinät paikallaan
+    alt: "Seinät paikallaan"
+    title: "Seinät paikallaan"
 galleryikkunat:
   - url: assets/images/3d/08ikkunalaudoitus.png
     image_path: assets/images/3d/08ikkunalaudoitus.png
-    alt: Ikkunalaudoitus
-    title: Ikkunalaudoitus
+    alt: "Ikkunalaudoitus"
+    title: "Ikkunalaudoitus"
   - url: assets/images/3d/08ikkunalaudoitus.png
     image_path: assets/images/3d/08ikkunalaudoitus.png
-    alt: Ikkunan karmit
-    title: Ikkunan karmit
+    alt: "Ikkunan karmit"
+    title: "Ikkunan karmit"
   - url: assets/images/3d/10IkkunaParent.png
     image_path: assets/images/3d/10IkkunaParent.png
     alt: ikkunan objektien ryhmittely
     title: ikkunan objektien ryhmittely
   - url: assets/images/3d/09IkkunaMatskut.png
     image_path: assets/images/3d/09IkkunaMatskut.png
-    alt: Oviaukko
-    title: Oviaukko
+    alt: "Oviaukko"
+    title: "Oviaukko"
   - url: assets/images/3d/12linkObjectData.png
     image_path: assets/images/3d/12linkObjectData.png
-    alt: Objektien linkitys
-    title: Objektien linkitys
+    alt: "Objektien linkitys"
+    title: "Objektien linkitys"
   - url: assets/images/3d/13linkattumuutos.png
     image_path: assets/images/3d/13linkattumuutos.png
-    alt: Linkitetty objekti muuttuu samalla
-    title: Linkitetty objekti muuttuu samalla
+    alt: "Linkitetty objekti muuttuu samalla"
+    title: "Linkitetty objekti muuttuu samalla"
   - url: assets/images/3d/16Monistetutikkunat.png
     image_path: assets/images/3d/16Monistetutikkunat.png
-    alt: Linkitetyt ikkunat
-    title: Linkitetyt ikkunat
+    alt: "Linkitetyt ikkunat"
+    title: "Linkitetyt ikkunat"
 galleryhaasteet:
   - url: assets/images/3d/25RikkiCyclesilla.png
     image_path: assets/images/3d/25RikkiCyclesilla.png
-    alt: Materiaalissa artifaktit Cyclesillä
-    title: Materiaalissa artifaktit Cyclesillä
+    alt: "Materiaalissa artifaktit Cyclesillä"
+    title: "Materiaalissa artifaktit Cyclesillä"
   - url: assets/images/3d/31Boolean.png
     image_path: assets/images/3d/31Boolean.png
-    alt: Leikkausjäljet booleanilla
-    title: Leikkausjäljet booleanilla
+    alt: "Leikkausjäljet booleanilla"
+    title: "Leikkausjäljet booleanilla"
   - url: assets/images/3d/32RemoveMaterial.png
     image_path: assets/images/3d/32RemoveMaterial.png
-    alt: Ratkaisuna materiaalin poistaminen..
-    title: Ratkaisuna materiaalin poistaminen..
+    alt: "Ratkaisuna materiaalin poistaminen.."
+    title: "Ratkaisuna materiaalin poistaminen.."
   - url: assets/images/3d/33ApplyBooleanAddMaterial.png
     image_path: assets/images/3d/33ApplyBooleanAddMaterial.png
-    alt: ..ja takaisin laittaminen
-    title: ..ja takaisin laittaminen
+    alt: "..ja takaisin laittaminen"
+    title: "..ja takaisin laittaminen"
 ---
 
 # Tehtävä
