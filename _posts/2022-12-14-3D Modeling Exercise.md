@@ -23,7 +23,6 @@ galleryaloitus:
     image_path: assets/images/3d/SaunaMalli.png
     alt: Mökin malli.
     title: Mökin malli
-
 galleryseinat:
   - url: assets/images/3d/02lierioHirreksi.png
     image_path: assets/images/3d/02lierioHirreksi.png
@@ -41,7 +40,6 @@ galleryseinat:
     image_path: assets/images/3d/05hirsitalo.png
     alt: Seinät paikallaan
     title: Seinät paikallaan
-
 galleryikkunat:
   - url: assets/images/3d/08ikkunalaudoitus.png
     image_path: assets/images/3d/08ikkunalaudoitus.png
@@ -59,8 +57,6 @@ galleryikkunat:
     image_path: assets/images/3d/09IkkunaMatskut.png
     alt: Oviaukko
     title: Oviaukko
-
-
   - url: assets/images/3d/12linkObjectData.png
     image_path: assets/images/3d/12linkObjectData.png
     alt: Objektien linkitys
@@ -73,7 +69,6 @@ galleryikkunat:
     image_path: assets/images/3d/16Monistetutikkunat.png
     alt: Linkitetyt ikkunat
     title: Linkitetyt ikkunat
-
 galleryhaasteet:
   - url: assets/images/3d/25RikkiCyclesilla.png
     image_path: assets/images/3d/25RikkiCyclesilla.png
@@ -91,12 +86,6 @@ galleryhaasteet:
     image_path: assets/images/3d/33ApplyBooleanAddMaterial.png
     alt: ..ja takaisin laittaminen
     title: ..ja takaisin laittaminen
-  
-  - url: 
-    image_path: 
-    alt: 
-    title: 
-
 ---
 
 # Tehtävä
@@ -120,6 +109,8 @@ Hirsimökin seinät mallinsin *Arrayksi* asetetuista hirsistä, jotka mallinsin 
 ### Ovi ja ikkunat
 
 Ovelle ja ikkunoille tein aukot kuutioilla joille asetin **Boolean**-modifierin. Boolean leikkaa aukon toiseen objektiin käyttäen itsensä geometriaa leikkurina.
+
+Kun monistin ikkunoita, tein vielä muutoksia ikkunoiden kopioinnin jälkeen objekteihin. Tämän jälkeen jouduin muuttamaan vielä alkuperäistä objektia. Löysin onneksi **Link object data**-toiminnon, jolla pystyi muuttamaan samalla alkuperäistä objektiakin.
 
 {% include gallery id="galleryikkunat" %}
 
