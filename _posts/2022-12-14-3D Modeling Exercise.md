@@ -11,18 +11,36 @@ tags:
 toc: true
 toc_label: Sisällysluettelo
 galleryaloitus:
-  - url: assets\images\3d\01Pohjapiirros.png
-    image_path: assets\images\3d\01Pohjapiirros.png
+  - url: assets/images/3d/01Pohjapiirros.png
+    image_path: assets/images/3d/01Pohjapiirros.png
     alt: "Pohjapiirros"
     title: "Pohjapiirros"
-  - url: assets\images\3d\02lierioHirreksi.png
-    image_path: assets\images\3d\02lierioHirreksi.png
+  - url: assets/images/3d/02lierioHirreksi.png
+    image_path: assets/images/3d/02lierioHirreksi.png
     alt: "Hirren mallinnusta"
     title: "Hirren mallinnusta"
-  - url: assets\images\3d\03hirreksi.png
-    image_path: assets\images\3d\03hirreksi.png
+  - url: assets/images/3d/03hirreksi.png
+    image_path: assets/images/3d/03hirreksi.png
     alt: "Hirren mallinnusta 2"
     title: "Hirren mallinnusta 2"
+  - url: assets/images/3d/04hirsiArray.png
+    image_path: assets/images/3d/04hirsiArray.png
+    alt: "Hirsistä array"
+    title: "Hirsistä array"
+  - url: assets/images/3d/05hirsitalo.png
+    image_path: assets/images/3d/05hirsitalo.png
+    alt: Seinät paikallaan
+    title: Seinät paikallaan
+  - url: assets/images/3d/08ikkunalaudoitus.png
+    image_path: assets/images/3d/08ikkunalaudoitus.png
+    alt: Ikkunalaudoitus
+    title: Ikkunalaudoitus
+
+
+  - url: 
+    image_path: 
+    alt: 
+    title:
 
 ---
 
@@ -36,7 +54,13 @@ galleryaloitus:
 
 Aloitin etsimällä netistä mallia mökille, jonka voisin mallintaa. Löysin sopivan hirsimökkimallin [Karvian Hirsirakentajien sivuilta](https://www.karvianhirsirakentajat.fi/rantasaunat-saunamokit-ja-hirsisaunat/saunamokki-25/). Heillä oli myös pohjapiirros, mitä voisi käyttää mallina. Otin pohjapiirroksen talteen ja aloin mallintamaan perustusta talolle. Mallinsin pohjapiirroksen millimetrin tarkkuudella.
 
-Hirsimökin seinät mallinsin *Arrayksi* asetetuista hirsistä, jotka mallinsin sylinteristä (ks galleria). Ikkunoille tein aukot kuutioilla joille oli asetettu **Boolean**-modifier.
+### Seinät
+
+Hirsimökin seinät mallinsin *Arrayksi* asetetuista hirsistä, jotka mallinsin sylinteristä (ks galleria). 
+
+### Ovi ja ikkunat
+
+Ovelle ja ikkunoille tein aukot kuutioilla joille asetin **Boolean**-modifierin. Boolean leikkaa aukon toiseen objektiin käyttäen itsensä geometriaa leikkurina.
 
 {% include gallery id="galleryaloitus" layout="full" %}
 
