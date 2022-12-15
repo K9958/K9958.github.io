@@ -11,6 +11,8 @@ tags:
 toc: true
 toc_label: Sisällysluettelo
 toc_sticky: true
+header:
+  teaser: assets/images/3d/Render3.png
 galleryaloitus:
   - url: assets/images/3d/01Pohjapiirros.png
     image_path: assets/images/3d/01Pohjapiirros.png
