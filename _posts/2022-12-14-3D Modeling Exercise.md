@@ -43,6 +43,14 @@ galleryseinat:
     image_path: assets/images/3d/05hirsitalo.png
     alt: "Seinät paikallaan"
     title: "Seinät paikallaan"
+  - url: assets/images/3d/14MeanCrease.png
+    image_path: assets/images/3d/14MeanCrease.png
+    alt: "Mean Crease"
+    title: "Mean Crease"
+  - url: assets/images/3d/15Copymodifiers.png
+    image_path: assets/images/3d/15Copymodifiers.png
+    alt: "Modifierien kopiointi"
+    title: "Modifierien kopiointi"
 galleryikkunat:
   - url: assets/images/3d/08ikkunalaudoitus.png
     image_path: assets/images/3d/08ikkunalaudoitus.png
@@ -320,7 +328,7 @@ Aika oli luoda materiaaleja. Loin tutoriaalien avulla ja itse kokeilemalla erila
 
 ## Terassi
 
-Terassiin halusin tehdä aidon näköiset laudat, joten etsin mitat, ja mallin erään rautakaupan sivuilta. Mallinsin laudat tarkasti mittojen mukaan ja asetin terassin pohjaksi limittäin *Arrayta* käyttäen. Leikkasin lautojen ylimenevän osuuden kappaleella, johon laitoin *Boolean*-modifierin.
+Terassiin halusin tehdä aidon näköiset laudat, joten etsin mitat, ja mallin erään rautakaupan sivuilta. Mallinsin laudat tarkasti mittojen mukaan, pyöristin aavistuksen **Bevel**-modifierillä ja asetin terassin pohjaksi limittäin *Arrayta* käyttäen. Leikkasin lautojen ylimenevän osuuden kappaleella, johon laitoin *Boolean*-modifierin.
 
 {% include gallery id="galleryterassi" %}
 
