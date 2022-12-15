@@ -108,8 +108,8 @@ gallerypuut:
     image_path: assets/images/3d/45Koivutekstuuri2.png
     alt: Versio 2
     title: Versio 2
-  - url: assets/images/3d/47Koivulehti.png
-    image_path: assets/images/3d/47Koivulehti.png
+  - url: assets/images/3d/46Koivunlehti.png
+    image_path: assets/images/3d/46Koivunlehti.png
     alt: Kuvan hyödyntäminen partikkelina
     title: Kuvan hyödyntäminen partikkelina
   - url: assets/images/3d/47Koivulehdet.png
