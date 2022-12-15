@@ -46,10 +46,6 @@ galleryikkunat:
     image_path: assets/images/3d/08ikkunalaudoitus.png
     alt: "Ikkunalaudoitus"
     title: "Ikkunalaudoitus"
-  - url: assets/images/3d/08ikkunalaudoitus.png
-    image_path: assets/images/3d/08ikkunalaudoitus.png
-    alt: "Ikkunan karmit"
-    title: "Ikkunan karmit"
   - url: assets/images/3d/10IkkunaParent.png
     image_path: assets/images/3d/10IkkunaParent.png
     alt: ikkunan objektien ryhmittely
@@ -206,11 +202,23 @@ gallerymaisema:
     image_path: assets/images/3d/42Terrainsculpt.png
     alt: Terrainin sculptaus
     title: Terrainin sculptaus
+  - url: assets/images/3d/57Kivet.png
+    image_path: assets/images/3d/57Kivet.png
+    alt: Kivien luonti Geometry Nodeilla
+    title: Kivien luonti Geometry Nodeilla
+  - url: assets/images/3d/59Kivi.png
+    image_path: assets/images/3d/59Kivi.png
+    alt: Kiven lopputulos materiaaleineen
+    title: Kiven lopputulos materiaaleineen
 galleryvesi:
-  - url: 
-    image_path: 
-    alt: 
-    title: 
+  - url: assets/images/3d/43Vesiblokki.png
+    image_path: assets/images/3d/43Vesiblokki.png
+    alt: "Vesiblokki lasimateriaalista"
+    title: "Vesiblokki lasimateriaalista"
+  - url: assets/images/3d/49.png
+    image_path: assets/images/3d/49.png
+    alt: "Hiotumpi heijastus"
+    title: "Hiotumpi heijastus"
 gallerymateriaalit:
   - url: assets/images/3d/20MateriaaliStudio.png
     image_path: assets/images/3d/20MateriaaliStudio.png
@@ -228,6 +236,40 @@ gallerymateriaalit:
     image_path: assets/images/3d/24OvimateriaaliLautamateriaalit.png
     alt: Materiaalit mökkiin
     title: Materiaalit mökkiin
+  - url: assets/images/3d/35Perustus.png
+    image_path: assets/images/3d/35Perustus.png
+    alt: Perustuksen materiaali
+    title: Perustuksen materiaali
+gallerykomposti:
+  - url: assets/images/3d/50Rendertesti.png
+    image_path: assets/images/3d/50Rendertesti.png
+    alt: Testejä ennen viimeisiä renderöintejä
+    title: Testejä ennen viimeisiä renderöintejä
+  - url: assets/images/3d/50Rendertesti.png
+    image_path: assets/images/3d/50Rendertesti.png
+    alt: Aikainen rendertesti
+    title: Aikainen rendertesti
+  - url: assets/images/3d/60Testibeforefinal.png
+    image_path: assets/images/3d/60Testibeforefinal.png
+    alt: Kompositointitesti Eeveellä ennen viimeisiä renderöintejä
+    title: Kompositointitesti Eeveellä ennen viimeisiä renderöintejä
+  - url: assets/images/3d/55ViewLayers.png
+    image_path: assets/images/3d/55ViewLayers.png
+    alt: ViewLayereiden luonti
+    title: ViewLayereiden luonti
+  - url: assets/images/3d/53Renderlayers.png
+    image_path: assets/images/3d/53Renderlayers.png
+    alt: Vesi omassa layerissään
+    title: Vesi omassa layerissään
+  - url: assets/images/3d/54Kompositointiyhteen.png
+    image_path: assets/images/3d/54Kompositointiyhteen.png
+    alt: Läpinäkyvien kuvien yhteen kutominen
+    title: Läpinäkyvien kuvien yhteen kutominen
+  - url: assets/images/3d/56YhteenKutominen.png
+    image_path: assets/images/3d/56YhteenKutominen.png
+    alt: Eeveellä kannattaa testata ennen Cyclesin käyttöä että kaikki sujuu
+    title: Eeveellä kannattaa testata ennen Cyclesin käyttöä että kaikki sujuu
+
 ---
 
 # Tehtävä
@@ -306,7 +348,19 @@ Lehdet koivuun sain luomalla koivuun **Particle Systeemin**. Tein verteksijoukon
 
 Veden tein aluksi laittamalla tason rantaan, ja teksturoin sen karheaksi ja heijastamaan paljon valoa. Koska alussa suunnittelin vielä maisemaa, jossa olisi ns kuutiomainen poikkileikkaus, eli näyttäisi siltä että mökki olisi kuutiomaisella maapläntillä, niin vesi näytti siinä huonolta, koska se oli vain leijuva taso maan päällä. Tein uuden veden käyttäen lasista kuutiota, jonka pinnan tasoa vain aaltomaisesti animoin. Lasiblokissa oli se hyvä puoli, että se alkuperäisessä suunnitelmassani näytti todella paljon paremmalta kuin pelkkä taso, ja oli sopivasti läpinäkyvä. Päädyin loppurenderissä käyttämään tätä lasista blokkia, vaikka se ei päässyt oikeuksiinsa loppurenderissä.
 
+Lisäsin veden materiaaliin ja displacement:iin animaation saadakseni veden liikkumista muistuttavan efektin.
+
 {% include gallery id="galleryvesi" %}
+
+## Renderöinti ja kompositointi
+
+Objektien viimein paikalla ollessa sain luvan renderöidä. Objektit piti jakaa eri **ViewLayer**eihin, jotta staattisia liikkumattomia asioita ei tarvitsisi renderöidä kahta kertaa. Läpinäkyvyys täytyi renderöintiasetuksista laittaa päälle, jotta ympäristön taustakuva ei tulisi renderiin mukaan. ViewLayeristä pystyi sitten laittamaan päälle niitä *Collectioneja* eli kokoelmia mitä halusi kyseiseen ViewLayeriin mukaan. ViewLayeristä voi laittaa myös päälle pelkästään muiden objektien jättämän läpinäkyvän leikkauksen ja/tai niiden vaikutuksen ympäristöön, kuten varjostus tai valo, ilman että kyseinen objektikokoelma on Layerissä mukana.
+
+Kokonaisajaksi renderöinnissä meni useampi tunti, sillä blender välillä kaatui kesken renderöinnin, ja eräässä tapauksessa renderöinti piti aloittaa alusta.
+
+Renderöinnin jälkeen kompositointityökalulla renderöidyt eri ViewLayereiden kuvat voitiin yhdistää. Tärkeää yhdistelyssä oli kuvien oikea järjestys, jotta kaikki layerit näkyivät lopputuloksessa. Osa layereistä oli staattisia kuvia ja osa kuvakokoelmia, jotka voitiin sitten jälkirenderöidä animaatioksi. Lisäsin kompositointiin muutamia jälkikäsittelyefektejä, joilla säädin ensin erikseen eri viewlayereiden värejä ja sitten lopulta koko lopputuloksen värejä ja valotusta yhdessä. Animaation renderöinnin jälkeen vihdoin uurastuksen lopputulos oli käsissä!
+
+{% include gallery id="gallerykomposti" %}
 
 ## Hasteet
 
