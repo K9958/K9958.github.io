@@ -142,6 +142,19 @@ galleryovi:
     image_path: assets/images/3d/19detalji.png
     alt: Oviraudat tasoista Solidifyllä
     title: Oviraudat tasoista Solidifyllä
+gallerykatto:
+  - url: assets/images/3d/40Katto.png
+    image_path: assets/images/3d/40Katto.png
+    alt: Katto ja piippu paikoillaan
+    title: Katto ja piippu paikoillaan
+  - url: assets/images/3d/48Savupiippusavu.png
+    image_path: assets/images/3d/48Savupiippusavu.png
+    alt: Savun luominen
+    title: Savun luominen
+  - url: assets/images/3d/52SavuTuuli.png
+    image_path: assets/images/3d/52SavuTuuli.png
+    alt: Tuuli työntämään savua ulos
+    title: Tuuli työntämään savua ulos
 ---
 
 # Tehtävä
@@ -186,8 +199,13 @@ Geometry Nodes osoittautuikin aidan tapauksessa haastavammaksi tehtäväksi kuin
 
 {% include gallery id="galleryaidat" %}
 
-## Katto
+## Katto, savupiippu, savu
 
+Kattoa mallintaessa nostin seinien korkeutta metrillä ja leikkasin Boolean-modifierillä seinät katon muottiin. Tein katon kehykset laudoista ja asetin katon päälle mustia levyjä bitumikattohuovaksi. Kattoa varten oli aluksi vaikea asetella lautoja toisensa jälkeen samaan kulmaan ja tasoon, joten löysin keinon lautojen ja muidenkin kattokappaleiden helpommalle asettelulle: [Oman koordinaatiston luominen](https://www.youtube.com/watch?v=b2g-eG6KkCk). Tämän avulla sain kaikki kattokappaleet helposti aseteltua.
+
+Tein savupiipun peltihormina ja lisäsin savun käyttämällä blenderin *Quick Effects* -> *Quick Smoke* toimintoa, minkä lisäsin palloon, jonka piilotin savupiippuun. Asetin savupiipun hormin seinämiin ja hattuun *Liquid Colliderin* (Physics-välilehti), jonka avulla sain savun törmäämään piipun geometriaan. Vielä pisteeksi i:n päälle lisäsin tuuliobjektin työntämään savua piipusta ulos. Savun generointi tapahtui "beikkaamalla" (bake) savuefekti tietyille keyframeille. Asetin savun alkamaan kehyksestä -100, jotta savu olisi jo ilmassa ensimmäisen kehyksen kohdalla, josta renderöinti alkaisi.
+
+{% include gallery id="gallerykatto" %}
 
 ## Maisema
 
