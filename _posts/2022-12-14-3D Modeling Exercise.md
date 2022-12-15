@@ -287,12 +287,16 @@ gallerykomposti:
     image_path: assets/images/3d/Jalkikasittely.png
     alt: Maiseman jälkikäsittelyä
     title: Maiseman jälkikäsittelyä
-
+gallerygeometry:
+  - url: assets/images/3d/GeometryAita.jpg
+    image_path: assets/images/3d/GeometryAita.jpg
+    alt: Aidan Geometry Nodet
+    title: Aidan Geometry Nodet
 ---
 
 # Tehtävä
 
-3D-Mallinnuskurssin harjoitustyön tehtävänä oli valita itselle tarpeeksi haastava aihe, josta tehdä 3D näkymä. Tarkoituksena oli myös käyttää tavallisten 3d-mallinnusteknologioiden ohella haastavempia ja monimutkaisempia tekniikoita. Valitsin aiheekseni mallintaa rantasaunan/mökin rantamaisemalla.
+3D-Mallinnuskurssin harjoitustyön tehtävänä oli valita itselle tarpeeksi haastava aihe, josta tehdä 3D näkymä. Tarkoituksena oli myös käyttää tavallisten 3d-mallinnusteknologioiden ohella haastavempia ja monimutkaisempia tekniikoita ja renderöidä lopputulos. Valitsin aiheekseni mallintaa rantasaunan/mökin rantamaisemalla.
 
 # Toteutus
 
@@ -310,9 +314,9 @@ Hirsimökin seinät mallinsin *Arrayksi* asetetuista hirsistä, jotka mallinsin 
 
 ## Ovi ja ikkunat
 
-Ovelle ja ikkunoille tein aukot kuutioilla joille asetin **Boolean**-modifierin. Boolean leikkaa aukon toiseen objektiin käyttäen itsensä geometriaa leikkurina.
+Ovelle ja ikkunoille tein aukot kuutioilla joille asetin **Boolean**-modifierin. Boolean leikkaa aukon toiseen objektiin käyttäen itsensä geometriaa leikkurina. Valitsin käyttää **Boolean**ia, sillä ovea ja aukkoa voi siirtää helposti vielä jälkikäteen.
 
-Kun monistin ikkunoita, tein vielä muutoksia ikkunoiden kopioinnin jälkeen objekteihin. Tämän jälkeen jouduin muuttamaan vielä alkuperäistä objektia. Löysin onneksi **Link object data**-toiminnon, jolla pystyi muuttamaan samalla alkuperäistä objektiakin.
+Kun monistin ikkunoita, tein vielä muutoksia ikkunoiden kopioinnin jälkeen objekteihin. Tämän jälkeen jouduin muuttamaan vielä alkuperäistä objektia. Löysin onneksi **Link object data**-toiminnon, jolla yhteen objektiin tehty muutos siirtyy samalla kaikkiin linkattuihin objekteihin.
 
 {% include gallery id="galleryikkunat" %}
 
@@ -322,7 +326,7 @@ Toteutin oven suurimmaksi osaksi **Box-Modeling** periaatteella yhdestä kappale
 
 ## Materiaalit
 
-Aika oli luoda materiaaleja. Loin tutoriaalien avulla ja itse kokeilemalla erilaisia kuvioita ja materiaaleja. Loin testausta varten projektiin oman scenen, johon asetin testattavat materiaalit eri kappaleisiin. Materiaalit olivat aluksi vaikeita ymmärtää ja luoda, mutta rutiinilla alkoi hahmottaa että mitä tiettyjä yhdistelemällä saisi tietynlaisen kuvion aikaiseksi. Tykkäsin kokeilla luoda satunnaisia ja luonnollisia kuvioita, erityisesti puuta muistuttavia materiaaleja.
+Loin tutoriaalien avulla ja itse kokeilemalla erilaisia kuvioita ja materiaaleja. Loin testausta varten projektiin oman scenen, johon asetin testattavat materiaalit eri kappaleisiin. Materiaalit olivat aluksi vaikeita ymmärtää ja luoda, mutta rutiinilla alkoi hahmottaa että mitä tiettyjä yhdistelemällä saisi tietynlaisen kuvion aikaiseksi. Tykkäsin kokeilla luoda satunnaisia ja luonnollisia kuvioita, erityisesti puuta muistuttavia materiaaleja. Kuvissa osa luomistani materiaaleista.
 
 {% include gallery id="gallerymateriaalit" %}
 
@@ -336,9 +340,29 @@ Terassiin halusin tehdä aidon näköiset laudat, joten etsin mitat, ja mallin e
 
 Halusin tehdä aidat käyttäen uutta **Geometry Nodes**-toimintoa blenderissä. Geometry Nodes on node-pohjainen työkalu, jolla voi tehdä noodipohjaista geometriamanipulointia monella eri tavoin. Sillä voi tehdä esimerkiksi dynaamisia aitoja, partikkelisysteemin tapaisia distribuutioita eri pinnoille, ja olemassa olevaan geometriaan muutoksia erilaisien noodien avulla. Halusin tehdä terassiaidan, johon tulee kaide ja sivulaudat, joka skaalautuu automaattisesti ja jota voi dynaamisesti siirrellä. Tavallisella arraylla ei tällaista voi tehdä yksinään.
 
+
 Geometry Nodes osoittautuikin aidan tapauksessa haastavammaksi tehtäväksi kuin ajattelin. Aidat sain hyvin jaoteltua **Curvelle** eli käyrälle, mutta aidan laudat olivat haastavia, ja ominaisuuden uutuuden takia dokumentaatiota eikä tutoriaaleja ollut paljoa saatavilla. Sain kuitenkin yritysten ja kokeilujen kautta suoran kopioitua ja muutettua kaiteeksi sekä sivulaudoiksi.
 
 {% include gallery id="galleryaidat" %}
+
+### Geometry Node selitetty auki
+
+Geometry node-editorissa lähtönoodi ottaa nykyisen objektin, johon Geometry Node on liitetty modifierinä, geometrian jota voidaan manipuloida esim. erilaisilla modifiereillä, muutoksilla verteksien sijainteihin, materiaaleja muuttamalla.
+
+Kuvan ja aitaesimerkin avulla selitän noodit:
+
+{% include gallery id="gallerygeometry" %}
+
+1. Input Node: Lähdeobjektin geometria. Nykyisessä kohteessa kyseessä Curve.
+2. Curven jakaminen uudelleen pisteisiin tietyn välimatkan välein
+3. Jaetaan pisteisiin haluttu objekti. Tässä tapauksessa aidan poikkipuut
+4. Valittu objekti ja sen asettelu curvelle
+5. Liikutetaan curvea haluttuun kohtaan
+6. Tehdään käyrästä paksu, tehdään siitä muoto (mesh) ja asetetaan materiaali
+7. Sivulaudan tekeminen: Sijoitetaan alkuperäisen curven instanssi toiseen paikkaan, annetaan sille profiili, laajennetaan (extrude)
+8. Yhdistetään verteksit ja asetetaan materiaali
+9. Kopioidaan sivulauta ja asetetaan kopio toiseen paikkaan
+10. Lopuksi yhdistetään kaikki geometria yhdeksi objektiksi ja lähetetään geometria ohjelmalle
 
 ## Katto, savupiippu, savu
 
