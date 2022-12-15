@@ -138,7 +138,7 @@ galleryovi:
     image_path: assets/images/3d/18Lukko.png
     alt: Lukon mallintamista
     title: Lukon mallintamista
-  - url: assets/images/3d/19detaljo.png
+  - url: assets/images/3d/19detalji.png
     image_path: assets/images/3d/19detalji.png
     alt: Oviraudat tasoista Solidifyllä
     title: Oviraudat tasoista Solidifyllä
