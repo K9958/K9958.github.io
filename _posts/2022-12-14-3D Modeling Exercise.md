@@ -10,6 +10,7 @@ tags:
   - Texturing
 toc: true
 toc_label: Sisällysluettelo
+toc_sticky: true
 galleryaloitus:
   - url: assets/images/3d/01Pohjapiirros.png
     image_path: assets/images/3d/01Pohjapiirros.png
