@@ -432,7 +432,7 @@ Pidän harjoistyötäni kiitettävään arvosanaan riittävänä tai ainakin pä
 
 ## Kritiikki
 
-Työssä ehkä heikoin kohta on siinä, että maiseman monimutkaisuus ei jakaannu ihan tasaisesti. Mökki on monimutkaisin osa maisemaa, ja ympäröivä muu maisema ei ole aivan yhtä monimutkainen. Mökkiin onkin käytetty suhteessa eniten ainaa. Ennen kuin tein viimeisen renderöinnin, pienensin näkymää kohdistumaan enemmän mökkiin, että mökki pääsisi paremmin oikeuksiinsa.
+Työssä ehkä heikoin kohta on siinä, että maiseman monimutkaisuus ei jakaannu ihan tasaisesti. Mökki on monimutkaisin osa maisemaa, ja ympäröivä muu maisema ei ole aivan yhtä monimutkainen. Mökkiin onkin käytetty suhteessa eniten aikaa. Ennen kuin tein viimeisen renderöinnin, pienensin näkymää kohdistumaan enemmän mökkiin, että mökki pääsisi paremmin oikeuksiinsa.
 
 Vesiraja jäi kokonaan huomiotta, joka renderissä pistää hieman silmään. Sen voisi ehkä tekstuurilla häivyttää.
 
