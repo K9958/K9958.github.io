@@ -380,6 +380,10 @@ Renderöinnissä tuli toinenkin ongelma, kun yhden animaation tallennuksen jälk
 
 Työ eteni ja onnistui suuremmilta osin hyvin. Olen tyytyväinen lopputulokseen. Parannettavaa tietenkin on paljon, mutta tähän projektiin tämä on mielestäni riittävä lopputulos. Käytin monimutkaisia tekniikoita esim. Geometry Nodes, ViewLayer-renderöinti, animaation kompositointi, partikkelit. Skulptausta oli hieman myös mukana (maasto). Käytin myös mielestäni tekniikoita suhteellisen monipuolisesti.
 
+Onnistuneimpana ominaisuutena projektissa pidän erityisesti mökkiä. Se on monipuolinen ja sisältää paljon yksityiskohtia, jotka on osa tehty uusimpia tekniikoita käyttäen. Myös pidän hyvin onnistuneena maastoa. Sain hyvin yhdistettyä yhteen maastoon eri maskitekstuureja ja maalaamista hyväksi käyttäen kompleksisia materiaaleja, jotka mielestäni näyttävät hyvältä lopputuloksessa. Ehkä materiaalit ja node-editorin käyttö on oma vahvuuteni, joka aika hyvin näkyy harjoitustyöstä.
+
+Pidän harjoistyötäni kiitettävään arvosanaan riittävänä tai ainakin lähelle sitä.
+
 ## Kritiikki
 
 Työssä ehkä heikoin kohta on siinä, että maiseman monimutkaisuus ei jakaannu ihan tasaisesti. Mökki on monimutkaisin osa maisemaa, ja ympäröivä muu maisema ei ole aivan yhtä monimutkainen. Mökkiin onkin käytetty suhteessa eniten ainaa. Ennen kuin tein viimeisen renderöinnin, pienensin näkymää kohdistumaan enemmän mökkiin, että mökki pääsisi paremmin oikeuksiinsa.
