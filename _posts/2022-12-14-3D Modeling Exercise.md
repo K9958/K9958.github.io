@@ -427,5 +427,5 @@ Voit katsoa renderöidyn animaation ja renderöidyt kuvat tästä (Muista klikat
 |   9     |  Katto, savupiippu  |  
 |   7     |  Maasto, vesi, puut, kivet |  
 |    10    |    Renderöinti, kompositointi   |  
-| Yht  |       |  
-|    63    |       |  
+|   |       |  
+|    Yht    |   63    |  
