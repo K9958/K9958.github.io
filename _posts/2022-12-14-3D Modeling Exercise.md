@@ -86,6 +86,10 @@ galleryhaasteet:
     image_path: assets/images/3d/33ApplyBooleanAddMaterial.png
     alt: "..ja takaisin laittaminen"
     title: "..ja takaisin laittaminen"
+  - url: assets/images/3d/23CrackedMaterial.png
+    image_path: assets/images/3d/23CrackedMaterial.png
+    alt: "Bumpmapilla ei saa aikaan syvää halkeamaa"
+    title: "Bumpmapilla ei saa aikaan syvää halkeamaa"
   - url: assets/images/3d/DisplacementTesti.png
     image_path: assets/images/3d/DisplacementTesti.png
     alt: "Halkeamien kokeileminen displacementillä"
@@ -99,6 +103,22 @@ gallerypuut:
     image_path: assets/images/3d/saplingtreegen2.png
     alt: "Puiden generointi ja kustomointi"
     title: "Puiden generointi ja kustomointi"
+  - url: assets/images/3d/44Koivutekstuuri.png
+    image_path: assets/images/3d/44Koivutekstuuri.png
+    alt: Versio 1
+    title: Versio 1
+  - url: assets/images/3d/45Koivutekstuuri2.png
+    image_path: assets/images/3d/45Koivutekstuuri2.png
+    alt: Versio 2
+    title: Versio 2
+  - url: assets/images/3d/47Koivulehti.png
+    image_path: assets/images/3d/47Koivulehti.png
+    alt: Kuvan hyödyntäminen partikkelina
+    title: Kuvan hyödyntäminen partikkelina
+  - url: assets/images/3d/47Koivulehdet.png
+    image_path: assets/images/3d/47Koivulehdet.png
+    alt: Lehdet puussa
+    title: Lehdet puussa
 galleryrender:
   - url: assets/images/3d/Render1.png
     image_path: assets/images/3d/Render1.png
@@ -112,6 +132,27 @@ galleryrender:
     image_path: assets/images/3d/Render3.png
     alt: "Render frame 50"
     title: "Render frame 50"
+galleryterassi:
+  - url: assets/images/3d/26Pylvaat.png
+    image_path: assets/images/3d/26Pylvaat.png
+    alt: "Kattopylväät"
+    title: "Kattopylväät"
+  - url: assets/images/3d/27Terassilauta.png
+    image_path: assets/images/3d/27Terassilauta.png
+    alt: "Laudan mallintaminen"
+    title: "Laudan mallintaminen"
+  - url: assets/images/3d/29Terassiarray.png
+    image_path: assets/images/3d/29Terassiarray.png
+    alt: "Laudat limittäin arrayllä"
+    title: "Laudat limittäin arrayllä"
+  - url: assets/images/3d/30TerassiBoolean.png
+    image_path: assets/images/3d/30TerassiBoolean.png
+    alt: "Lautojen leikkaaminen booleanilla"
+    title: "Lautojen leikkaaminen booleanilla"
+  - url: assets/images/3d/28Terassi.png
+    image_path: assets/images/3d/28Terassi.png
+    alt: "Laudat leikattuina"
+    title: "Laudat leikattuina"
 galleryaidat:
   - url: assets/images/3d/36GeometryNodeAita.png
     image_path: assets/images/3d/36GeometryNodeAita.png
@@ -155,6 +196,37 @@ gallerykatto:
     image_path: assets/images/3d/52SavuTuuli.png
     alt: Tuuli työntämään savua ulos
     title: Tuuli työntämään savua ulos
+gallerymaisema:
+  - url: assets/images/3d/41WeightMap.png
+    image_path: assets/images/3d/41WeightMap.png
+    alt: Ruohon asettelu käyttäen Weight Mappia
+    title: Ruohon asettelu käyttäen Weight Mappia
+  - url: assets/images/3d/42Terrainsculpt.png
+    image_path: assets/images/3d/42Terrainsculpt.png
+    alt: Terrainin sculptaus
+    title: Terrainin sculptaus
+galleryvesi:
+  - url: 
+    image_path: 
+    alt: 
+    title: 
+gallerymateriaalit:
+  - url: assets/images/3d/20MateriaaliStudio.png
+    image_path: assets/images/3d/20MateriaaliStudio.png
+    alt: Studio materiaalien luontia varten
+    title: Studio materiaalien luontia varten
+  - url: assets/images/3d/21Materiaalitestailua.png
+    image_path: assets/images/3d/21Materiaalitestailua.png
+    alt: Lisää materiaaleja
+    title: Lisää materiaaleja
+  - url: assets/images/3d/22Materiaalitestit.png
+    image_path: assets/images/3d/22Materiaalitestit.png
+    alt: Vielä lisää materiaaleja. Hehkuva materiaali syntyi vahingossa väärää arvoa muuttamalla
+    title: Vielä lisää materiaaleja. Hehkuva materiaali syntyi vahingossa väärää arvoa muuttamalla
+  - url: assets/images/3d/24OvimateriaaliLautamateriaalit.png
+    image_path: assets/images/3d/24OvimateriaaliLautamateriaalit.png
+    alt: Materiaalit mökkiin
+    title: Materiaalit mökkiin
 ---
 
 # Tehtävä
@@ -187,9 +259,17 @@ Toteutin oven suurimmaksi osaksi **Box-Modeling** periaatteella yhdestä kappale
 
 {% include gallery id="galleryovi" %}
 
+## Materiaalit
+
+Aika oli luoda materiaaleja. Loin tutoriaalien avulla ja itse kokeilemalla erilaisia kuvioita ja materiaaleja. Loin testausta varten projektiin oman scenen, johon asetin testattavat materiaalit eri kappaleisiin. Materiaalit olivat aluksi vaikeita ymmärtää ja luoda, mutta rutiinilla alkoi hahmottaa että mitä tiettyjä yhdistelemällä saisi tietynlaisen kuvion aikaiseksi. Tykkäsin kokeilla luoda satunnaisia ja luonnollisia kuvioita, erityisesti puuta muistuttavia materiaaleja.
+
+{% include gallery id="gallerymateriaalit" %}
+
 ## Terassi
 
 Terassiin halusin tehdä aidon näköiset laudat, joten etsin mitat, ja mallin erään rautakaupan sivuilta. Mallinsin laudat tarkasti mittojen mukaan ja asetin terassin pohjaksi limittäin *Arrayta* käyttäen. Leikkasin lautojen ylimenevän osuuden kappaleella, johon laitoin *Boolean*-modifierin.
+
+{% include gallery id="galleryterassi" %}
 
 ## Aidat ja Geometry Nodes
 
@@ -211,6 +291,8 @@ Tein savupiipun peltihormina ja lisäsin savun käyttämällä blenderin *Quick 
 
 Kivet generoin maisemaan käyttämällä tuttua **Geometry nodes**-työkalua. Tein työkalun, jolla generoin yksinkertaisista objekteista kuten kuutioista yksityiskohtaisia ja rosoisia kivimalleja. Työkalussa on muutama parametri, joita voi muuttaa ja hienosäätää siten lopputulosta. 
 
+{% include gallery id="gallerymaisema" %}
+
 ## Puut
 
 Puut generoin käyttämällä Blenderin omaa lisäosaa *Sapling Tree Gen*. Lisäosalla pystyy luomaan erilaisia puupresettejä säätämällä monia puiden ominaisuuksia esim oksien tiheyttä, korkeutta ja haaroitusta. Työkalusta löytyy lukuisien asetusten lisäksi valmiita presettejä. Käytin valmista presettiä sekä omaa luomaa koivujen generointiin. Generoimisen jälkeen muutin puut *Meshiksi* ja loin niille materiaalin yritten jäljitellä oikeaa koivun ulkonäköä.
@@ -222,6 +304,8 @@ Lehdet koivuun sain luomalla koivuun **Particle Systeemin**. Tein verteksijoukon
 ## Vesi
 
 Veden tein aluksi laittamalla tason rantaan, ja teksturoin sen karheaksi ja heijastamaan paljon valoa. Koska alussa suunnittelin vielä maisemaa, jossa olisi ns kuutiomainen poikkileikkaus, eli näyttäisi siltä että mökki olisi kuutiomaisella maapläntillä, niin vesi näytti siinä huonolta, koska se oli vain leijuva taso maan päällä. Tein uuden veden käyttäen lasista kuutiota, jonka pinnan tasoa vain aaltomaisesti animoin. Lasiblokissa oli se hyvä puoli, että se alkuperäisessä suunnitelmassani näytti todella paljon paremmalta kuin pelkkä taso, ja oli sopivasti läpinäkyvä. Päädyin loppurenderissä käyttämään tätä lasista blokkia, vaikka se ei päässyt oikeuksiinsa loppurenderissä.
+
+{% include gallery id="galleryvesi" %}
 
 ## Hasteet
 
@@ -246,6 +330,8 @@ Työ eteni ja onnistui suuremmilta osin hyvin. Olen tyytyväinen lopputulokseen.
 Työssä ehkä heikoin kohta on siinä, että maiseman monimutkaisuus ei jakaannu ihan tasaisesti. Mökki on monimutkaisin osa maisemaa, ja ympäröivä muu maisema ei ole aivan yhtä monimutkainen. Mökkiin onkin käytetty suhteessa eniten ainaa. Ennen kuin tein viimeisen renderöinnin, pienensin näkymää kohdistumaan enemmän mökkiin, että mökki pääsisi paremmin oikeuksiinsa.
 
 Vesiraja jäi kokonaan huomiotta, joka renderissä pistää hieman silmään. Sen voisi ehkä tekstuurilla häivyttää.
+
+Puihin oli myös vaikea saada lehdet näyttämään hyvältä. Kokeilin yksittäisiä lehtiä puissa, mutta se ei näyttänyt hyvältä. Oksia olisi pitänyt olla paljon enemmän ja niiden olisi pitänyt jakaantua vielä lisää. Tyydyin tässä vähän heikompaan tulokseen.
 
 # Tulokset
 
