@@ -104,14 +104,44 @@ galleryrender:
     image_path: assets/images/3d/Render1.png
     alt: "Render frame 1"
     title: "Render frame 1"
-  - url: assets/images/3d/Render1.png
-    image_path: assets/images/3d/Render1.png
+  - url: assets/images/3d/Render2.png
+    image_path: assets/images/3d/Render2.png
     alt: "Render frame 25"
     title: "Render frame 25"
-  - url: assets/images/3d/Render1.png
-    image_path: assets/images/3d/Render1.png
+  - url: assets/images/3d/Render3.png
+    image_path: assets/images/3d/Render3.png
     alt: "Render frame 50"
     title: "Render frame 50"
+galleryaidat:
+  - url: assets/images/3d/36GeometryNodeAita.png
+    image_path: assets/images/3d/36GeometryNodeAita.png
+    alt: Aita Geometry Nodella
+    title: Aita Geometry Nodella
+  - url: assets/images/3d/37AidanLuominen.png
+    image_path: assets/images/3d/37AidanLuominen.png
+    alt: Geometry Nodet
+    title: Geometry Nodet
+  - url: assets/images/3d/38Aita.png
+    image_path: assets/images/3d/38Aita.png
+    alt: Aita sivulautoineen
+    title: Aita sivulautoineen
+  - url: assets/images/3d/39TerassiaidatPaikallaan.png
+    image_path: assets/images/3d/39TerassiaidatPaikallaan.png
+    alt: Aita asetettuna terassille
+    title: Aita asetettuna terassille
+galleryovi:
+  - url: assets/images/3d/17Ovi.png
+    image_path: assets/images/3d/17Ovi.png
+    alt: Box-Modeling ovi
+    title: Box-Modeling ovi
+  - url: assets/images/3d/18Lukko.png
+    image_path: assets/images/3d/18Lukko.png
+    alt: Lukon mallintamista
+    title: Lukon mallintamista
+  - url: assets/images/3d/19detaljo.png
+    image_path: assets/images/3d/19detalji.png
+    alt: Oviraudat tasoista Solidifyllä
+    title: Oviraudat tasoista Solidifyllä
 ---
 
 # Tehtävä
@@ -140,8 +170,21 @@ Kun monistin ikkunoita, tein vielä muutoksia ikkunoiden kopioinnin jälkeen obj
 
 {% include gallery id="galleryikkunat" %}
 
+Toteutin oven suurimmaksi osaksi **Box-Modeling** periaatteella yhdestä kappaleesta. Eristin myöhemmin kappaleita omiksi objekteikseen, kun tekstuurit eivät renderöityneet oikein Cyclesillä, ja yritin korjata ongelmaa.
+
+{% include gallery id="galleryovi" %}
+
 ## Terassi
 
+Terassiin halusin tehdä aidon näköiset laudat, joten etsin mitat, ja mallin erään rautakaupan sivuilta. Mallinsin laudat tarkasti mittojen mukaan ja asetin terassin pohjaksi limittäin *Arrayta* käyttäen. Leikkasin lautojen ylimenevän osuuden kappaleella, johon laitoin *Boolean*-modifierin.
+
+## Aidat ja Geometry Nodes
+
+Halusin tehdä aidat käyttäen uutta **Geometry Nodes**-toimintoa blenderissä. Geometry Nodes on node-pohjainen työkalu, jolla voi tehdä noodipohjaista geometriamanipulointia monella eri tavoin. Sillä voi tehdä esimerkiksi dynaamisia aitoja, partikkelisysteemin tapaisia distribuutioita eri pinnoille, ja olemassa olevaan geometriaan muutoksia erilaisien noodien avulla. Halusin tehdä terassiaidan, johon tulee kaide ja sivulaudat, joka skaalautuu automaattisesti ja jota voi dynaamisesti siirrellä. Tavallisella arraylla ei tällaista voi tehdä yksinään.
+
+Geometry Nodes osoittautuikin aidan tapauksessa haastavammaksi tehtäväksi kuin ajattelin. Aidat sain hyvin jaoteltua **Curvelle** eli käyrälle, mutta aidan laudat olivat haastavia, ja ominaisuuden uutuuden takia dokumentaatiota eikä tutoriaaleja ollut paljoa saatavilla. Sain kuitenkin yritysten ja kokeilujen kautta suoran kopioitua ja muutettua kaiteeksi sekä sivulaudoiksi.
+
+{% include gallery id="galleryaidat" %}
 
 ## Katto
 
@@ -188,7 +231,7 @@ Vesiraja jäi kokonaan huomiotta, joka renderissä pistää hieman silmään. Se
 
 # Tulokset
 
-Voit katsoa renderöidyn animaation ja renderöidyn kuvan tästä:
+Voit katsoa renderöidyn animaation ja renderöidyn kuvan tästä (Muista klikata video **1080p**-resoluutiolle):
 
 {% include video id="MKADZk-r7VQ" provider="youtube" %}
 
