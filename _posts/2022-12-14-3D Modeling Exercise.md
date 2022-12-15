@@ -249,6 +249,7 @@ gallerymateriaalit:
     alt: Perustuksen materiaali
     title: Perustuksen materiaali
 gallerykomposti:
+  - url: assets/images/3d/50Rendertesti.png
     image_path: assets/images/3d/50Rendertesti.png
     alt: Aikainen rendertesti
     title: Aikainen rendertesti
@@ -305,7 +306,7 @@ Kun monistin ikkunoita, tein vielä muutoksia ikkunoiden kopioinnin jälkeen obj
 
 {% include gallery id="galleryikkunat" %}
 
-Toteutin oven suurimmaksi osaksi **Box-Modeling** periaatteella yhdestä kappaleesta. Eristin myöhemmin kappaleita omiksi objekteikseen, kun tekstuurit eivät renderöityneet oikein Cyclesillä, ja yritin korjata ongelmaa.
+Toteutin oven suurimmaksi osaksi **Box-Modeling** periaatteella yhdestä kappaleesta. Käytin **Mirror**-modifieriä oven geometrian peilaamiseen toisellekin puolelle. Eristin myöhemmin ovesta kappaleita omiksi objekteikseen, kun tekstuurit eivät renderöityneet oikein Cyclesillä, ja yritin korjata ongelmaa.
 
 {% include gallery id="galleryovi" %}
 
