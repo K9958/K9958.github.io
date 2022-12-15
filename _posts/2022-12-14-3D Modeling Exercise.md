@@ -249,11 +249,6 @@ gallerymateriaalit:
     alt: Perustuksen materiaali
     title: Perustuksen materiaali
 gallerykomposti:
-  - url: assets/images/3d/50Rendertesti.png
-    image_path: assets/images/3d/50Rendertesti.png
-    alt: Testejä ennen viimeisiä renderöintejä
-    title: Testejä ennen viimeisiä renderöintejä
-  - url: assets/images/3d/50Rendertesti.png
     image_path: assets/images/3d/50Rendertesti.png
     alt: Aikainen rendertesti
     title: Aikainen rendertesti
@@ -398,7 +393,7 @@ Työ eteni ja onnistui suuremmilta osin hyvin. Olen tyytyväinen lopputulokseen.
 
 Onnistuneimpana ominaisuutena projektissa pidän erityisesti mökkiä. Se on monipuolinen ja sisältää paljon yksityiskohtia, jotka on osa tehty uusimpia tekniikoita käyttäen. Myös pidän hyvin onnistuneena maastoa. Sain hyvin yhdistettyä yhteen maastoon eri maskitekstuureja ja maalaamista hyväksi käyttäen kompleksisia materiaaleja, jotka mielestäni näyttävät hyvältä lopputuloksessa. Ehkä materiaalit ja node-editorin käyttö on oma vahvuuteni, joka aika hyvin näkyy harjoitustyöstä.
 
-Pidän harjoistyötäni kiitettävään arvosanaan riittävänä tai ainakin lähelle sitä.
+Pidän harjoistyötäni kiitettävään arvosanaan riittävänä tai ainakin pääsevän lähelle sitä.
 
 ## Kritiikki
 
@@ -416,5 +411,18 @@ Voit katsoa renderöidyn animaation ja renderöidyt kuvat tästä (Muista klikat
 
 {% include gallery id="galleryrender" %}
 
-# Tuntikirjaukset
+# Projektin vaiheisiin kulunut aika:
 
+| Tunnit | Vaiheet | 
+|--------|-------|
+|   6     |  Perustukset, Seinät, ikkunat |   
+|   4     |  ikkunat ja oviaukko     |   
+|   9     |   ovi ja materiaalit    |  
+|   4     |    Materiaalit   |  
+|   9     |  Terassi, betoniperustus, aidat     |  
+|   5    |  portaat, palkit, katto    |  
+|   9     |  Katto, savupiippu  |  
+|   7     |  Maasto, vesi, puut, kivet |  
+|    10    |    Renderöinti, kompositointi   |  
+| Yht  |       |  
+|    63    |       |  
