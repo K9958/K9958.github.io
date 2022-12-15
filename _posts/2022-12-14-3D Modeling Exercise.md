@@ -194,6 +194,14 @@ gallerykatto:
     alt: Tuuli työntämään savua ulos
     title: Tuuli työntämään savua ulos
 gallerymaisema:
+  - url: assets/images/3d/Maski.png
+    image_path: assets/images/3d/Maski.png
+    alt: Materiaalit yhdistetään ja maskitekstuuri yhdistetään solmun Fac-arvoon
+    title: Materiaalit yhdistetään ja maskitekstuuri yhdistetään solmun Fac-arvoon
+  - url: assets/images/3d/PaintMaterials.png
+    image_path: assets/images/3d/PaintMaterials.png
+    alt: Maskiin maalaaminen
+    title: Maskiin maalaaminen
   - url: assets/images/3d/41WeightMap.png
     image_path: assets/images/3d/41WeightMap.png
     alt: Ruohon asettelu käyttäen Weight Mappia
@@ -269,6 +277,10 @@ gallerykomposti:
     image_path: assets/images/3d/56YhteenKutominen.png
     alt: Eeveellä kannattaa testata ennen Cyclesin käyttöä että kaikki sujuu
     title: Eeveellä kannattaa testata ennen Cyclesin käyttöä että kaikki sujuu
+  - url: assets/images/3d/Jalkikasittely.png
+    image_path: assets/images/3d/Jalkikasittely.png
+    alt: Maiseman jälkikäsittelyä
+    title: Maiseman jälkikäsittelyä
 
 ---
 
@@ -330,7 +342,11 @@ Tein savupiipun peltihormina ja lisäsin savun käyttämällä blenderin *Quick 
 
 {% include gallery id="gallerykatto" %}
 
-## Maisema
+## Ympäristö
+
+Loin ympäristölle ruudukon, jonka muotoilin poikkileikkausmaiseksi. Tein ympäristölle kolme erilaista tekstuuria: multa, sora ja hiekka. Osoittautui aluksi vaikeaksi keksiä miten saada kaikkia materiaaleja maalattua samaan maastoon. Löysin netistä [tutoriaalivideon](https://www.youtube.com/watch?v=L0hsY1sudRk), jonka mukaan tekstuureja voi maalata objektiin käyttäen apuna itseluotuja maskitekstuureja, joilla maalataan materiaali maastoon. Objekti UV-unwräpätään ja mustalle testuurille maalataan valkoista kohtiin, joista haluaa toisen tekstuurin näkyvän läpi. Materiaalit yhdistetään materiaali-node-editorissa *Mix shader*-noodin avulla ja maskitekstuuri kiinnitettään *Mix Shader*-noodin *Fac*-arvoon.
+
+Lisäsin maastoon partikkelisysteemin käyttäen hiuspartikkelia, jonka muotoilin ja värjäsin ruohon näköiseksi. Verteksiryhmän (Vertex Group) ja *Weight Paint*-työkalun avulla värjäsin kohdat, missä halusin ruohoa olevan. Saman toistin ruohon pituudelle.
 
 Kivet generoin maisemaan käyttämällä tuttua **Geometry nodes**-työkalua. Tein työkalun, jolla generoin yksinkertaisista objekteista kuten kuutioista yksityiskohtaisia ja rosoisia kivimalleja. Työkalussa on muutama parametri, joita voi muuttaa ja hienosäätää siten lopputulosta. 
 
@@ -394,7 +410,7 @@ Puihin oli myös vaikea saada lehdet näyttämään hyvältä. Kokeilin yksittä
 
 # Tulokset
 
-Voit katsoa renderöidyn animaation ja renderöidyn kuvan tästä (Muista klikata video **1080p**-resoluutiolle):
+Voit katsoa renderöidyn animaation ja renderöidyt kuvat tästä (Muista klikata video **1080p**-resoluutiolle):
 
 {% include video id="MKADZk-r7VQ" provider="youtube" %}
 
