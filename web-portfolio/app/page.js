@@ -7,7 +7,7 @@ import { useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 import { db } from '../firebase/config';
 import { collection, addDoc } from 'firebase/firestore';
-import { useState } from 'react';
+import { useState, Suspense } from 'react';
 
 const playfair = Playfair_Display({
   subsets: ['latin'],
@@ -383,7 +383,7 @@ const ContentSection = ({ section }) => {
   )
 }
 
-export default function Home() {
+function HomeContent() {
   const searchParams = useSearchParams()
   const section = searchParams.get('section')
 
@@ -423,5 +423,13 @@ export default function Home() {
         </Link>
       </footer>
     </div>
+  );
+}
+
+export default function Home() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <HomeContent />
+    </Suspense>
   );
 }
