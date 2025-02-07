@@ -1,2 +1,2 @@
-# K9958.github.io
-My portfolio
+# My Personal Web Portfolio built on Next.JS
+Web portfolio built on Next.JS
