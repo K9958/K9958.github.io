@@ -59,7 +59,7 @@ const PortfolioCard = ({ title, description, tech, image, link }) => {
   )
 }
 
-const TimelineItem = ({ year, title, company, duration, description }) => {
+const TimelineItem = ({ year, title, company, duration, description, isEducation }) => {
   return (
     <motion.div 
       initial={{ opacity: 0, x: -20 }}
@@ -68,19 +68,25 @@ const TimelineItem = ({ year, title, company, duration, description }) => {
     >
       {/* Aikajanan viiva ja piste */}
       <div className="flex flex-col items-center">
-        <div className="w-3 h-3 bg-blue-400 rounded-full z-10" />
+        <div className={`w-3 h-3 ${isEducation ? 'bg-purple-400' : 'bg-blue-400'} rounded-full z-10 
+          ${isEducation ? 'ring-2 ring-purple-400 ring-opacity-50' : ''}`} />
         <div className="w-0.5 h-full bg-gray-700 -mt-1.5" />
       </div>
       
       {/* Sisältö */}
       <div className="flex-1 pb-12">
         <div className="flex flex-wrap items-baseline gap-x-3 mb-2">
-          <span className="text-blue-400 font-medium">{year}</span>
+          <span className={`font-medium ${isEducation ? 'text-purple-400' : 'text-blue-400'}`}>{year}</span>
           <h3 className={`text-xl text-white ${playfair.className}`}>{title}</h3>
           <span className="text-gray-400">@ {company}</span>
+          {isEducation && (
+            <span className="text-xs px-2 py-0.5 rounded-full bg-purple-400 bg-opacity-20 text-purple-300 border border-purple-400 border-opacity-30">
+              Education
+            </span>
+          )}
         </div>
         <span className="text-sm text-gray-500 block mb-2">{duration}</span>
-        <p className="text-gray-300">{description}</p>
+        <p className={`${isEducation ? 'text-purple-100' : 'text-gray-300'}`}>{description}</p>
       </div>
     </motion.div>
   )
@@ -233,51 +239,50 @@ const ContentSection = ({ section }) => {
   }
 
   if (section === 'cv') {
-    const experiences = [
-      {
-        year: "2023",
-        title: "Software Developer",
-        company: "Yritys Oy",
-        duration: "2023 - Present",
-        description: "Developing and maintaining modern web applications using React, Node.js, and cloud technologies. Leading technical initiatives and mentoring junior developers."
-      },
-      {
-        year: "2021",
-        title: "Full Stack Developer",
-        company: "Tech Solutions Ltd",
-        duration: "2021 - 2023",
-        description: "Built scalable web applications using Next.js and TypeScript. Implemented CI/CD pipelines and automated testing procedures."
-      },
+    const timeline = [
       {
         year: "2020",
-        title: "Junior Developer",
-        company: "Digital Services Inc",
-        duration: "2020 - 2021",
-        description: "Started as a junior developer working on frontend development with React. Participated in agile development processes and code reviews."
-      },
-      {
-        year: "2019",
-        title: "Intern Developer",
-        company: "StartUp Oy",
-        duration: "2019 - 2020",
-        description: "Internship position focusing on web development fundamentals. Worked with HTML, CSS, JavaScript, and basic React components."
-      }
-    ];
-
-    const education = [
-      {
-        year: "2020",
-        title: "Bachelor of Engineering",
-        company: "Metropolia University of Applied Sciences",
-        duration: "2016 - 2020",
-        description: "Information Technology. Specialized in software development and web technologies. Thesis focused on modern web application architectures."
+        title: "Bachelor of Engineering, ICT",
+        company: "JAMK University of Applied Sciences",
+        duration: "2020 ->",
+        description: "Information and Communication Technology studies. Aiming to graduate as a Bachelor of Engineering in ICT.",
+        isEducation: true
       },
       {
         year: "2016",
+        title: "Sales Negotiator",
+        company: "Buusteri Oy",
+        duration: "Summer 2016",
+        description: "Sales negotiation responsibilities"
+      },
+      {
+        year: "2016",
+        title: "Kindergarten Worker",
+        company: "Päiväkoti Lammastarha Oy",
+        duration: "2016",
+        description: "Work trial as a kindergarten worker"
+      },
+      {
+        year: "2014",
+        title: "Element Worker",
+        company: "Lujabetoni Oy Siilinjärvi",
+        duration: "2014",
+        description: "Internship as a concrete element worker"
+      },
+      {
+        year: "2014",
+        title: "Plastic Worker",
+        company: "Rotomon Oy",
+        duration: "Summer 2014",
+        description: "Plastic manufacturing worker responsibilities"
+      },
+      {
+        year: "2013",
         title: "High School Diploma",
-        company: "Lukio X",
-        duration: "2013 - 2016",
-        description: "Advanced courses in mathematics, physics, and computer science. Participated in programming competitions."
+        company: "Kangasniemi High School",
+        duration: "2013",
+        description: "Upper secondary education completed with matriculation examination",
+        isEducation: true
       }
     ];
 
@@ -289,30 +294,16 @@ const ContentSection = ({ section }) => {
         transition={{ duration: 0.5 }}
         className="w-full max-w-3xl"
       >
-        <h2 className={`text-4xl ${playfair.className} mb-12`}>Work Experience</h2>
-        <div className="space-y-2 mb-16">
-          {experiences.map((exp, index) => (
-            <motion.div
-              key={exp.title}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-            >
-              <TimelineItem {...exp} />
-            </motion.div>
-          ))}
-        </div>
-
-        <h2 className={`text-4xl ${playfair.className} mb-12`}>Education</h2>
+        <h2 className={`text-4xl ${playfair.className} mb-12`}>Timeline</h2>
         <div className="space-y-2">
-          {education.map((edu, index) => (
+          {timeline.map((item, index) => (
             <motion.div
-              key={edu.title}
+              key={`${item.title}-${item.year}`}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <TimelineItem {...edu} />
+              <TimelineItem {...item} />
             </motion.div>
           ))}
         </div>
@@ -340,7 +331,7 @@ const ContentSection = ({ section }) => {
 
   // Oletusnäkymä (About Me)
   return (
-    <div className="flex flex-col sm:flex-row gap-40 items-center justify-center w-full">
+    <div className="flex flex-col-reverse lg:flex-row gap-40 items-center justify-center w-full">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
