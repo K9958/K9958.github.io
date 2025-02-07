@@ -1,8 +1,7 @@
 'use client';  // Add this at the top because framer-motion requires client-side rendering
 
-import Image from "next/image";
-import profilephoto from "./profilephoto.png";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { Playfair_Display } from 'next/font/google'
 
 const playfair = Playfair_Display({
@@ -30,7 +29,7 @@ export default function Home() {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <Image
-              src={profilephoto}
+              src="/profilephoto.png"
               alt="Profile photo"
               width={500}
               height={500}
