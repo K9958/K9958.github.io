@@ -5,6 +5,9 @@ import Image from "next/image";
 import { Playfair_Display, Raleway } from 'next/font/google'
 import { useSearchParams } from 'next/navigation'
 import Link from 'next/link'
+import { db } from '../firebase/config';
+import { collection, addDoc } from 'firebase/firestore';
+import { useState } from 'react';
 
 const playfair = Playfair_Display({
   subsets: ['latin'],
@@ -16,36 +19,302 @@ const raleway = Raleway({
   display: 'swap',
 })
 
+const PortfolioCard = ({ title, description, tech, image, link }) => {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      whileHover={{ y: -5 }}
+      transition={{ duration: 0.3 }}
+      className="bg-[#252526] rounded-lg overflow-hidden hover:shadow-xl transition-shadow"
+    >
+      <div className="relative h-48 w-full">
+        <Image
+          src={image}
+          alt={title}
+          fill
+          className="object-cover"
+        />
+      </div>
+      <div className="p-6">
+        <h3 className={`text-xl font-semibold mb-2 ${playfair.className}`}>{title}</h3>
+        <p className="text-gray-400 mb-4 text-sm">{description}</p>
+        <div className="flex flex-wrap gap-2 mb-4">
+          {tech.map((item, index) => (
+            <span key={index} className="text-xs px-2 py-1 bg-[#2d2d2e] rounded-full text-gray-300">
+              {item}
+            </span>
+          ))}
+        </div>
+        <a
+          href={link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-sm text-blue-400 hover:text-blue-300 transition-colors"
+        >
+          View Project →
+        </a>
+      </div>
+    </motion.div>
+  )
+}
+
+const TimelineItem = ({ year, title, company, duration, description }) => {
+  return (
+    <motion.div 
+      initial={{ opacity: 0, x: -20 }}
+      animate={{ opacity: 1, x: 0 }}
+      className="flex gap-6 relative"
+    >
+      {/* Aikajanan viiva ja piste */}
+      <div className="flex flex-col items-center">
+        <div className="w-3 h-3 bg-blue-400 rounded-full z-10" />
+        <div className="w-0.5 h-full bg-gray-700 -mt-1.5" />
+      </div>
+      
+      {/* Sisältö */}
+      <div className="flex-1 pb-12">
+        <div className="flex flex-wrap items-baseline gap-x-3 mb-2">
+          <span className="text-blue-400 font-medium">{year}</span>
+          <h3 className={`text-xl text-white ${playfair.className}`}>{title}</h3>
+          <span className="text-gray-400">@ {company}</span>
+        </div>
+        <span className="text-sm text-gray-500 block mb-2">{duration}</span>
+        <p className="text-gray-300">{description}</p>
+      </div>
+    </motion.div>
+  )
+}
+
+const ContactForm = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+  const [status, setStatus] = useState('');
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus('sending');
+
+    try {
+      await addDoc(collection(db, 'contacts'), {
+        ...formData,
+        timestamp: new Date()
+      });
+      
+      setStatus('success');
+      setFormData({ name: '', email: '', message: '' });
+    } catch (error) {
+      console.error('Error:', error);
+      setStatus('error');
+    }
+  };
+
+  return (
+    <form onSubmit={handleSubmit} className="space-y-6">
+      <div>
+        <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
+          Name
+        </label>
+        <input
+          type="text"
+          id="name"
+          required
+          className="w-full px-4 py-2 bg-[#2d2d2e] rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+          value={formData.name}
+          onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+        />
+      </div>
+      
+      <div>
+        <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
+          Email
+        </label>
+        <input
+          type="email"
+          id="email"
+          required
+          className="w-full px-4 py-2 bg-[#2d2d2e] rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+          value={formData.email}
+          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+        />
+      </div>
+      
+      <div>
+        <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
+          Message
+        </label>
+        <textarea
+          id="message"
+          required
+          rows={4}
+          className="w-full px-4 py-2 bg-[#2d2d2e] rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+          value={formData.message}
+          onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+        />
+      </div>
+
+      <button
+        type="submit"
+        disabled={status === 'sending'}
+        className="w-full px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors disabled:opacity-50"
+      >
+        {status === 'sending' ? 'Sending...' : 'Send Message'}
+      </button>
+
+      {status === 'success' && (
+        <p className="text-green-500 text-center">Message sent successfully!</p>
+      )}
+      {status === 'error' && (
+        <p className="text-red-500 text-center">Failed to send message. Please try again.</p>
+      )}
+    </form>
+  );
+};
+
 const ContentSection = ({ section }) => {
   if (section === 'portfolio') {
+    const projects = [
+      {
+        title: "AI Chat Application",
+        description: "A real-time chat application powered by artificial intelligence, featuring dynamic response generation and context awareness.",
+        tech: ["React", "Node.js", "OpenAI", "WebSocket"],
+        image: "/project1.jpg",
+        link: "https://github.com/yourusername/project1"
+      },
+      {
+        title: "Task Management System",
+        description: "A comprehensive task management solution with team collaboration features and real-time updates.",
+        tech: ["Next.js", "TypeScript", "Prisma", "PostgreSQL"],
+        image: "/project2.jpg",
+        link: "https://github.com/yourusername/project2"
+      },
+      {
+        title: "E-commerce Platform",
+        description: "A modern e-commerce platform with advanced filtering, search, and payment processing capabilities.",
+        tech: ["React", "Redux", "Node.js", "MongoDB"],
+        image: "/project3.jpg",
+        link: "https://github.com/yourusername/project3"
+      },
+      {
+        title: "Weather Dashboard",
+        description: "A weather monitoring dashboard with interactive maps and real-time weather data visualization.",
+        tech: ["Vue.js", "D3.js", "Express", "Weather API"],
+        image: "/project4.jpg",
+        link: "https://github.com/yourusername/project4"
+      }
+    ];
+
     return (
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={{ duration: 0.5 }}
-        className="flex flex-col gap-6"
+        className="w-full max-w-6xl"
       >
-        <h2 className={`text-4xl ${playfair.className}`}>Portfolio</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          {/* Portfolio projektit tähän */}
+        <h2 className={`text-4xl ${playfair.className} mb-8`}>Portfolio</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {projects.map((project, index) => (
+            <motion.div
+              key={project.title}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+            >
+              <PortfolioCard {...project} />
+            </motion.div>
+          ))}
         </div>
       </motion.div>
     )
   }
 
   if (section === 'cv') {
+    const experiences = [
+      {
+        year: "2023",
+        title: "Software Developer",
+        company: "Yritys Oy",
+        duration: "2023 - Present",
+        description: "Developing and maintaining modern web applications using React, Node.js, and cloud technologies. Leading technical initiatives and mentoring junior developers."
+      },
+      {
+        year: "2021",
+        title: "Full Stack Developer",
+        company: "Tech Solutions Ltd",
+        duration: "2021 - 2023",
+        description: "Built scalable web applications using Next.js and TypeScript. Implemented CI/CD pipelines and automated testing procedures."
+      },
+      {
+        year: "2020",
+        title: "Junior Developer",
+        company: "Digital Services Inc",
+        duration: "2020 - 2021",
+        description: "Started as a junior developer working on frontend development with React. Participated in agile development processes and code reviews."
+      },
+      {
+        year: "2019",
+        title: "Intern Developer",
+        company: "StartUp Oy",
+        duration: "2019 - 2020",
+        description: "Internship position focusing on web development fundamentals. Worked with HTML, CSS, JavaScript, and basic React components."
+      }
+    ];
+
+    const education = [
+      {
+        year: "2020",
+        title: "Bachelor of Engineering",
+        company: "Metropolia University of Applied Sciences",
+        duration: "2016 - 2020",
+        description: "Information Technology. Specialized in software development and web technologies. Thesis focused on modern web application architectures."
+      },
+      {
+        year: "2016",
+        title: "High School Diploma",
+        company: "Lukio X",
+        duration: "2013 - 2016",
+        description: "Advanced courses in mathematics, physics, and computer science. Participated in programming competitions."
+      }
+    ];
+
     return (
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={{ duration: 0.5 }}
-        className="flex flex-col gap-6 max-w-2xl"
+        className="w-full max-w-3xl"
       >
-        <h2 className={`text-4xl ${playfair.className}`}>Curriculum Vitae</h2>
-        <div className="text-gray-300">
-          {/* CV sisältö tähän */}
+        <h2 className={`text-4xl ${playfair.className} mb-12`}>Work Experience</h2>
+        <div className="space-y-2 mb-16">
+          {experiences.map((exp, index) => (
+            <motion.div
+              key={exp.title}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+            >
+              <TimelineItem {...exp} />
+            </motion.div>
+          ))}
+        </div>
+
+        <h2 className={`text-4xl ${playfair.className} mb-12`}>Education</h2>
+        <div className="space-y-2">
+          {education.map((edu, index) => (
+            <motion.div
+              key={edu.title}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+            >
+              <TimelineItem {...edu} />
+            </motion.div>
+          ))}
         </div>
       </motion.div>
     )
@@ -58,12 +327,13 @@ const ContentSection = ({ section }) => {
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={{ duration: 0.5 }}
-        className="flex flex-col gap-6 max-w-xl"
+        className="w-full max-w-xl"
       >
-        <h2 className={`text-4xl ${playfair.className}`}>Contact</h2>
-        <div className="text-gray-300">
-          {/* Yhteystiedot tähän */}
-        </div>
+        <h2 className={`text-4xl ${playfair.className} mb-8`}>Contact</h2>
+        <p className="text-gray-400 mb-8">
+          Feel free to reach out! I&apos;ll get back to you as soon as possible.
+        </p>
+        <ContactForm />
       </motion.div>
     )
   }
@@ -127,13 +397,15 @@ export default function Home() {
   const section = searchParams.get('section')
 
   return (
-    <div className={`grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 bg-gradient-to-br from-[#181818] via-[#2a2a2b] to-[#151515] ${raleway.className} text-white`}>
-      <main className="flex flex-col gap-8 row-start-2 items-center justify-center w-full">
-        <AnimatePresence mode="wait">
-          <ContentSection section={section} key={section || 'home'} />
-        </AnimatePresence>
+    <div className="h-screen flex flex-col bg-gradient-to-br from-[#181818] via-[#2a2a2b] to-[#151515] overflow-hidden">
+      <main className="flex-1 overflow-y-auto px-8 pb-20 pt-8 sm:px-20 sm:pt-20">
+        <div className="min-h-full flex items-center justify-center">
+          <AnimatePresence mode="wait">
+            <ContentSection section={section} key={section || 'home'} />
+          </AnimatePresence>
+        </div>
       </main>
-      <footer className="row-start-3 flex gap-10 flex-wrap items-center justify-center">
+      <footer className="flex gap-10 flex-wrap items-center justify-center py-6 bg-gradient-to-b from-transparent to-[#151515]">
         <Link
           className="text-lg font-light tracking-wider hover:underline hover:underline-offset-4 transition-all duration-200 hover:text-gray-400"
           href="/"
