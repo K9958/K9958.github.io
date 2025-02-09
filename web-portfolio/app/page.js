@@ -399,7 +399,7 @@ const ContentSection = ({ section }) => {
       >
         <h2 className={`text-4xl ${playfair.className} mb-8`}>Contact</h2>
         <p className="text-gray-400 mb-8">
-          Feel free to reach out! I&apos;ll get back to you as soon as possible.
+        Got a project or opportunity in mind? I&apos;d love to hear about it and will respond promptly.
         </p>
         <ContactForm />
       </motion.div>
