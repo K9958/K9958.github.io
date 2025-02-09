@@ -71,22 +71,6 @@ export default function Portfolio() {
       image: "/proj_void.png",
       link: "https://github.com/SG-01-Productions/bgp-sprint-01",
       website: "https://sg-01-productions.github.io/bgp-sprint-01/"
-    },
-    {
-      title: "E-commerce Platform",
-      description: "A modern e-commerce platform with advanced filtering, search, and payment processing capabilities.",
-      tech: ["React", "Redux", "Node.js", "MongoDB"],
-      image: "/project3.jpg",
-      link: "https://github.com/yourusername/project3",
-      website: "https://example-ecommerce.com"
-    },
-    {
-      title: "Weather Dashboard", 
-      description: "A weather monitoring dashboard with interactive maps and real-time weather data visualization.",
-      tech: ["Vue.js", "D3.js", "Express", "Weather API"],
-      image: "/project4.jpg",
-      link: "https://github.com/yourusername/project4",
-      website: "https://example-weather.com"
     }
   ];
 
