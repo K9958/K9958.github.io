@@ -261,32 +261,36 @@ const ContentSection = ({ section }) => {
   if (section === 'portfolio') {
     const projects = [
       {
-        title: "AI Chat Application",
-        description: "A real-time chat application powered by artificial intelligence, featuring dynamic response generation and context awareness.",
-        tech: ["React", "Node.js", "OpenAI", "WebSocket"],
-        image: "/project1.jpg",
-        link: "https://github.com/yourusername/project1"
+        title: "Web Development Course Project",
+        description: "A responsive portfolio website built during my web development studies, featuring modern design principles, animations and interactive elements.",
+        tech: ["HTML", "CSS", "JavaScript"],
+        image: "/proj_webharjoitustyo.png",
+        link: "https://student.labranet.jamk.fi/~K9958/index.html",
+        website: "https://student.labranet.jamk.fi/~K9958/index.html"
       },
       {
-        title: "Task Management System",
-        description: "A comprehensive task management solution with team collaboration features and real-time updates.",
-        tech: ["Next.js", "TypeScript", "Prisma", "PostgreSQL"],
-        image: "/project2.jpg",
-        link: "https://github.com/yourusername/project2"
+        title: "Unity Space Shooter Game",
+        description: "A top-down 2.5D space shooter game developed as a one-week sprint project for JAMK's Basics of Game Programming course. Built as a freemium game demo showcasing core gameplay mechanics and space shooter elements.",
+        tech: ["Unity", "C#"],
+        image: "/proj_void.png",
+        link: "https://github.com/SG-01-Productions/bgp-sprint-01",
+        website: "https://sg-01-productions.github.io/bgp-sprint-01/"
       },
       {
         title: "E-commerce Platform",
         description: "A modern e-commerce platform with advanced filtering, search, and payment processing capabilities.",
         tech: ["React", "Redux", "Node.js", "MongoDB"],
         image: "/project3.jpg",
-        link: "https://github.com/yourusername/project3"
+        link: "https://github.com/yourusername/project3",
+        website: "https://example-ecommerce.com"
       },
       {
-        title: "Weather Dashboard",
+        title: "Weather Dashboard", 
         description: "A weather monitoring dashboard with interactive maps and real-time weather data visualization.",
         tech: ["Vue.js", "D3.js", "Express", "Weather API"],
         image: "/project4.jpg",
-        link: "https://github.com/yourusername/project4"
+        link: "https://github.com/yourusername/project4",
+        website: "https://example-weather.com"
       }
     ];
 
