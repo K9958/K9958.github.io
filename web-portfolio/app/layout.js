@@ -19,7 +19,7 @@ export const metadata = {
   icons: {
     icon: process.env.NODE_ENV === 'development' 
       ? '/favicon-dev.ico'
-      : '/favicon-prod.ico',
+      : '/favicon-prod.png',
   },
 };
 
