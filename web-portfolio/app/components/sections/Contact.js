@@ -1,8 +1,6 @@
 import { motion } from 'framer-motion';
 import { Playfair_Display } from 'next/font/google';
 import { useState } from 'react';
-import { db } from '../../../firebase/config';
-import { collection, addDoc } from 'firebase/firestore';
 
 const playfair = Playfair_Display({
   subsets: ['latin']
@@ -22,13 +20,20 @@ const ContactForm = () => {
     setStatus('sending');
 
     try {
-      await addDoc(collection(db, 'contacts'), {
-        ...formData,
-        timestamp: new Date()
+      const response = await fetch('https://formspree.io/f/mvgzqlqy', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
       });
-      
-      setStatus('success');
-      setFormData({ name: '', email: '', message: '' });
+
+      if (response.ok) {
+        setStatus('success');
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        throw new Error('Failed to send message');
+      }
     } catch (error) {
       console.error('Error:', error);
       setStatus('error');
