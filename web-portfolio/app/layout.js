@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   title: process.env.NODE_ENV === 'development'
-    ? "Kristian Kantola - Portfolio (DEV)"
+    ? "DEV: Kristian Kantola - Portfolio"
     : "Kristian Kantola - Portfolio",
   description: "Tervetuloa portfoliooni",
   icons: {
