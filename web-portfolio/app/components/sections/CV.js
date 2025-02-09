@@ -5,7 +5,8 @@ const playfair = Playfair_Display({
   subsets: ['latin']
 });
 
-const TimelineItem = ({ year, title, company, duration, description, isEducation }) => {
+const TimelineItem = ({ year, title, company, duration, description, isEducation, isOngoing }) => {
+  
   return (
     <motion.div 
       initial={{ opacity: 0, x: -20 }}
@@ -30,8 +31,13 @@ const TimelineItem = ({ year, title, company, duration, description, isEducation
               Education
             </span>
           )}
+          {isOngoing && (
+            <span className="text-xs px-2 py-0.5 rounded-full bg-green-500 bg-opacity-20 text-green-300 border border-green-500 border-opacity-30">
+              Ongoing
+            </span>
+          )}
         </div>
-        <span className="text-sm text-gray-500 block mb-2">{duration}</span>
+        <span className="text-sm text-gray-500 block mb-2">{duration.replace("->", "")}</span>
         <p className={`${isEducation ? 'text-purple-100' : 'text-gray-300'}`}>{description}</p>
       </div>
     </motion.div>
@@ -46,6 +52,14 @@ export default function CV() {
       company: "Project Pocket App",
       duration: "September 2024 ->",
       description: "Working as a software developer in a small startup project developing a mobile and web application, while conducting thesis research for the project. Technologies include Kotlin, JavaScript, and Ruby on Rails. Participating in programming, product development and design.",
+      isOngoing: true
+    },
+    {
+      year: "2022",
+      title: "DevSecOps Architect",
+      company: "WIMMA Lab", 
+      duration: "Summer 2022",
+      description: "Internship as a DevSecOps Architect, focusing on automation of Kubernetes and CSC cloud platform using Terraform, Bash scripting and Ansible. Implemented infrastructure as code practices and cloud automation solutions.",
     },
     {
       year: "2020",
@@ -53,10 +67,12 @@ export default function CV() {
       company: "JAMK University of Applied Sciences",
       duration: "2020 ->",
       description: "Information and Communication Technology studies. Aiming to graduate as a Bachelor of Engineering in ICT. Focus on software and web development.",
-      isEducation: true
+      isEducation: true,
+      isOngoing: true
     },
     {
       year: "2016",
+
       title: "Sales Negotiator",
       company: "Buusteri Oy",
       duration: "Summer 2016",
