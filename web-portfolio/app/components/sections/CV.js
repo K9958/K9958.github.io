@@ -59,7 +59,7 @@ export default function CV() {
       title: "DevSecOps Architect",
       company: "WIMMA Lab", 
       duration: "Summer 2022",
-      description: "Internship as a DevSecOps Architect, focusing on automation of Kubernetes and CSC cloud platform using Terraform, Bash scripting and Ansible. Implemented infrastructure as code practices and cloud automation solutions.",
+      description: "Internship as a DevSecOps Architect, focusing on automation of Kubernetes and CSC cloud platform using Terraform, Bash scripting and Ansible.",
     },
     {
       year: "2020",
