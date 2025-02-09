@@ -7,7 +7,7 @@ import { useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 import { db } from '../firebase/config';
 import { collection, addDoc } from 'firebase/firestore';
-import { useState, Suspense } from 'react';
+import { useState, Suspense, useEffect } from 'react';
 
 const playfair = Playfair_Display({
   subsets: ['latin'],
@@ -181,6 +181,85 @@ const ContactForm = () => {
 };
 
 const ContentSection = ({ section }) => {
+  if (!section || section === "me") {
+    return (
+      <motion.div
+        initial={{ opacity: 1 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0, transition: { duration: 0.5 } }}
+      >
+        <div className="flex flex-col lg:flex-row-reverse gap-6 sm:gap-20 lg:gap-40 items-center justify-center w-full h-full">
+          {/* Kuvan animaatio mobiilissa */}
+          <motion.div
+            initial={{ opacity: 0, y: "15%" }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="lg:hidden h-[40vh] flex items-center justify-center"
+          >
+            <Image
+              src="/profilephoto.png"
+              alt="Profile photo"
+              width={500}
+              height={500}
+              className="h-full w-auto max-h-[600px] object-contain"
+            />
+          </motion.div>
+          
+          {/* Kuvan animaatio desktopissa */}
+          <motion.div
+            initial={{ opacity: 0, x: "-15%" }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="hidden lg:flex h-auto items-center justify-center"
+          >
+            <Image
+              src="/profilephoto.png"
+              alt="Profile photo"
+              width={500}
+              height={500}
+              className="h-full w-auto max-h-[600px] object-contain"
+            />
+          </motion.div>
+          
+          {/* Tekstiosio */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.8 }}
+            className="flex flex-col gap-4"
+          >
+            <motion.h1 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 1.0 }}
+              className={`text-5xl sm:text-6xl font-bold ${playfair.className} text-white`}
+            >
+              Kristian Kantola
+            </motion.h1>
+            <motion.p 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 1.3 }}
+              className="text-2xl text-gray-300 font-light"
+            >
+              Programmer
+            </motion.p>
+            <motion.p 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 1.6 }}
+              className="text-gray-400 max-w-lg leading-relaxed"
+            >
+              Passionate software developer with a keen eye for detail and a love for automation.
+              Specializing in software development and modern web technologies, I&apos;m always eager to learn something new. 
+              When I&apos;m not coding, you&apos;ll find me exploring the latest tech trends or contributing to open-source projects.
+            </motion.p>
+          </motion.div>
+        </div>
+      </motion.div>
+    );
+  }
+
   if (section === 'portfolio') {
     const projects = [
       {
@@ -331,26 +410,58 @@ const ContentSection = ({ section }) => {
 
   // Oletusnäkymä (About Me)
   return (
-    <div className="flex flex-col-reverse lg:flex-row gap-40 items-center justify-center w-full">
+    <div className="flex flex-col lg:flex-row-reverse gap-6 sm:gap-20 lg:gap-40 items-center justify-center w-full h-full">
+      {/* Kuvan animaatio mobiilissa */}
+      <motion.div
+        initial={{ opacity: 0, y: "15%" }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className="lg:hidden h-[40vh] flex items-center justify-center"
+      >
+        <Image
+          src="/profilephoto.png"
+          alt="Profile photo"
+          width={500}
+          height={500}
+          className="h-full w-auto max-h-[600px] object-contain"
+        />
+      </motion.div>
+      
+      {/* Kuvan animaatio desktopissa */}
+      <motion.div
+        initial={{ opacity: 0, x: "-15%" }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className="hidden lg:flex h-auto items-center justify-center"
+      >
+        <Image
+          src="/profilephoto.png"
+          alt="Profile photo"
+          width={500}
+          height={500}
+          className="h-full w-auto max-h-[600px] object-contain"
+        />
+      </motion.div>
+      
+      {/* Tekstiosio */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        transition={{ duration: 0.5 }}
+        transition={{ duration: 0.5, delay: 0.8 }}
         className="flex flex-col gap-4"
       >
         <motion.h1 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.5 }}
-          className={`text-6xl font-bold ${playfair.className} text-white`}
+          transition={{ duration: 0.5, delay: 1.0 }}
+          className={`text-5xl sm:text-6xl font-bold ${playfair.className} text-white`}
         >
           Kristian Kantola
         </motion.h1>
         <motion.p 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.6 }}
+          transition={{ duration: 0.5, delay: 1.3 }}
           className="text-2xl text-gray-300 font-light"
         >
           Programmer
@@ -358,26 +469,13 @@ const ContentSection = ({ section }) => {
         <motion.p 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 1.2 }}
+          transition={{ duration: 0.5, delay: 1.6 }}
           className="text-gray-400 max-w-lg leading-relaxed"
         >
           Passionate software developer with a keen eye for detail and a love for automation.
           Specializing in software development and modern web technologies, I&apos;m always eager to learn something new. 
           When I&apos;m not coding, you&apos;ll find me exploring the latest tech trends or contributing to open-source projects.
         </motion.p>
-      </motion.div>
-      <motion.div
-        initial={{ x: "-20%", opacity: 0 }}
-        animate={{ x: "0%", opacity: 1 }}
-        exit={{ opacity: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-      >
-        <Image
-          src="/profilephoto.png"
-          alt="Profile photo"
-          width={500}
-          height={500}
-        />
       </motion.div>
     </div>
   )
@@ -387,36 +485,68 @@ function HomeContent() {
   const searchParams = useSearchParams()
   const section = searchParams.get('section')
 
+  const isActive = (linkSection) => {
+    if (linkSection === 'me' && !section) return true;
+    return section === linkSection;
+  };
+
+  useEffect(() => {
+    const scrollTimeout = setTimeout(() => {
+      const mainElement = document.querySelector('main');
+      if (mainElement) {
+        mainElement.scrollTop = 0;
+      }
+    }, 500);
+
+    return () => clearTimeout(scrollTimeout);
+  }, [section]);
+
   return (
     <div className="h-screen flex flex-col bg-gradient-to-br from-[#181818] via-[#2a2a2b] to-[#151515] overflow-hidden">
-      <main className="flex-1 overflow-y-auto px-8 pb-20 pt-8 sm:px-20 sm:pt-20">
+      <main className="flex-1 overflow-y-auto px-8 pb-10 pt-8 sm:px-20 sm:pt-20">
         <div className="min-h-full flex items-center justify-center">
           <AnimatePresence mode="wait">
             <ContentSection section={section} key={section || 'home'} />
           </AnimatePresence>
         </div>
       </main>
-      <footer className="flex gap-10 flex-wrap items-center justify-center py-6 bg-gradient-to-b from-transparent to-[#151515]">
+      <footer className="flex gap-4 sm:gap-10 flex-wrap items-center justify-center py-6 bg-gradient-to-b from-transparent to-[#151515]">
         <Link
-          className="text-lg font-light tracking-wider hover:underline hover:underline-offset-4 transition-all duration-200 hover:text-gray-400"
+          onClick={() => window.scrollTo(0, 0)}
+          className={`text-[0.85rem] sm:text-lg font-light tracking-wider transition-all duration-200 border-b-2 
+            ${isActive('me') 
+              ? 'text-white font-normal border-blue-400' 
+              : 'text-gray-400 hover:text-gray-200 border-transparent'}`}
           href="/"
         >
           Me
         </Link>
         <Link
-          className="text-lg font-light tracking-wider hover:underline hover:underline-offset-4 transition-all duration-200 hover:text-gray-400"
+          onClick={() => window.scrollTo(0, 0)}
+          className={`text-[0.85rem] sm:text-lg font-light tracking-wider transition-all duration-200 border-b-2 
+            ${isActive('portfolio') 
+              ? 'text-white font-normal border-blue-400' 
+              : 'text-gray-400 hover:text-gray-200 border-transparent'}`}
           href="/?section=portfolio"
         >
           Portfolio
         </Link>
         <Link
-          className="text-lg font-light tracking-wider hover:underline hover:underline-offset-4 transition-all duration-200 hover:text-gray-400"
+          onClick={() => window.scrollTo(0, 0)}
+          className={`text-[0.85rem] sm:text-lg font-light tracking-wider transition-all duration-200 border-b-2 
+            ${isActive('cv') 
+              ? 'text-white font-normal border-blue-400' 
+              : 'text-gray-400 hover:text-gray-200 border-transparent'}`}
           href="/?section=cv"
         >
           Curriculum
         </Link>
         <Link
-          className="text-lg font-light tracking-wider hover:underline hover:underline-offset-4 transition-all duration-200 hover:text-gray-400"
+          onClick={() => window.scrollTo(0, 0)}
+          className={`text-[0.85rem] sm:text-lg font-light tracking-wider transition-all duration-200 border-b-2 
+            ${isActive('contact') 
+              ? 'text-white font-normal border-blue-400' 
+              : 'text-gray-400 hover:text-gray-200 border-transparent'}`}
           href="/?section=contact"
         >
           Contact
