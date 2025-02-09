@@ -41,11 +41,18 @@ const TimelineItem = ({ year, title, company, duration, description, isEducation
 export default function CV() {
   const timeline = [
     {
+      year: "2024",
+      title: "Software Developer",
+      company: "Project Pocket App",
+      duration: "September 2024 ->",
+      description: "Working as a software developer in a small startup project developing a mobile and web application, while conducting thesis research for the project. Technologies include Kotlin, JavaScript, and Ruby on Rails. Participating in programming, product development and design.",
+    },
+    {
       year: "2020",
       title: "Bachelor of Engineering, ICT",
       company: "JAMK University of Applied Sciences",
       duration: "2020 ->",
-      description: "Information and Communication Technology studies. Aiming to graduate as a Bachelor of Engineering in ICT.",
+      description: "Information and Communication Technology studies. Aiming to graduate as a Bachelor of Engineering in ICT. Focus on software and web development.",
       isEducation: true
     },
     {
