@@ -49,6 +49,14 @@ const PortfolioCard = ({ title, description, tech, image, link }) => {
 export default function Portfolio() {
   const projects = [
     {
+      title: "Portfolio Website",
+      description: "Modern portfolio website built with Next.js, featuring responsive design, animations, and dynamic content management. Implements modern web development practices.",
+      tech: ["Next.js", "JavaScript", "TailwindCSS", "Firebase"],
+      image: "/proj_nextjsportfolio.png",
+      link: "https://github.com/K9958/K9958.github.io",
+      website: "https://k9958.github.io/"
+    },
+    {
       title: "Web Development Course Project",
       description: "A responsive portfolio website built during my web development studies, featuring modern design principles, animations and interactive elements.",
       tech: ["HTML", "CSS", "JavaScript"],
