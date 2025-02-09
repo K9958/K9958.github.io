@@ -51,7 +51,7 @@ export default function Portfolio() {
     {
       title: "Portfolio Website",
       description: "Modern portfolio website built with Next.js, featuring responsive design, animations, and dynamic content management. Implements modern web development practices.",
-      tech: ["Next.js", "JavaScript", "TailwindCSS", "Firebase"],
+      tech: ["Next.js", "JavaScript", "TailwindCSS"],
       image: "/proj_nextjsportfolio.png",
       link: "https://github.com/K9958/K9958.github.io",
       website: "https://k9958.github.io/"
