@@ -87,7 +87,12 @@ const ContactForm = () => {
       <button
         type="submit"
         disabled={status === 'sending'}
-        className="w-full px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors disabled:opacity-50 border-gray-700"
+        className="w-full px-6 py-3 bg-gradient-to-r from-blue-500 to-blue-600 
+          hover:from-blue-600 hover:to-blue-700 text-white font-medium rounded-lg 
+          transition-all duration-300 disabled:opacity-50 
+          shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50 
+          hover:-translate-y-0.5 active:translate-y-0 
+          disabled:hover:translate-y-0 disabled:hover:shadow-blue-500/30"
       >
         {status === 'sending' ? 'Sending...' : 'Send Message'}
       </button>
