@@ -57,6 +57,14 @@ export default function Portfolio() {
       website: "https://k9958.github.io/"
     },
     {
+      title: "Web Shop Frontend",
+      description: "A React-based e-commerce application frontend specialized in PC components sales. Features include category-based product browsing, shopping cart functionality with Redux state management, responsive UI with Bootstrap components, detailed product pages, and a Finnish language interface.",
+      tech: ["React", "Redux Toolkit", "React Bootstrap", "React Router"],
+      image: "/proj_komponentti.png",
+      link: "https://github.com/K9958/portfolio-komponentti",
+      website: "https://wonderful-wave-06a31e303.4.azurestaticapps.net/"
+    },
+    {
       title: "Web Development Course Project",
       description: "A responsive portfolio website built during my web development studies, featuring modern design principles, animations and interactive elements.",
       tech: ["HTML", "CSS", "JavaScript"],
