@@ -57,7 +57,7 @@ export default function AboutMe() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 1.0 }}
-            className={`text-5xl sm:text-6xl font-bold ${playfair.className} text-white`}
+            className={`text-5xl sm:text-6xl font-semibold ${playfair.className} text-white`}
           >
             Kristian Kantola
           </motion.h1>
