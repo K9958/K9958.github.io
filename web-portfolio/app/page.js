@@ -8,25 +8,27 @@ import AboutMe from './components/sections/AboutMe';
 import Contact from './components/sections/Contact';
 import CV from './components/sections/CV';
 import Footer from './components/layout/Footer';
+import { motion } from 'framer-motion';
 
 const ContentSection = ({ section }) => {
-  if (!section || section === "me") {
-    return (
-      <AboutMe />
-    );
-  }
-
-  if (section === 'portfolio') {
-    return <Portfolio />
-  }
-
-  if (section === 'cv') {
-    return <CV />
-  }
-
-  if (section === 'contact') {
-    return <Contact />
-  }
+  return (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.3 }}
+    >
+      {!section || section === "me" ? (
+        <AboutMe />
+      ) : section === 'portfolio' ? (
+        <Portfolio />
+      ) : section === 'cv' ? (
+        <CV />
+      ) : section === 'contact' ? (
+        <Contact />
+      ) : null}
+    </motion.div>
+  );
 }
 
 function HomeContent() {
@@ -53,7 +55,7 @@ function HomeContent() {
     <div className="h-screen flex flex-col bg-gradient-to-br from-[#181818] via-[#2a2a2b] to-[#151515] overflow-hidden">
       <main className="flex-1 overflow-y-auto px-8 pb-10 pt-8 sm:px-20 sm:pt-20">
         <div className="min-h-full flex items-center justify-center">
-          <AnimatePresence mode="wait">
+          <AnimatePresence mode="wait" initial={false}>
             <ContentSection section={section} key={section || 'home'} />
           </AnimatePresence>
         </div>
