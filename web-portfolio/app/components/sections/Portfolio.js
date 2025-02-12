@@ -13,16 +13,6 @@ const playfair = Playfair_Display({
 const ProjectDetails = ({ project, onBack }) => {
   return (
     <>
-      <div className="flex items-center gap-4 mb-8">
-        <button 
-          onClick={onBack}
-          className="text-blue-400 hover:text-blue-300 transition-colors flex items-center gap-2"
-        >
-          <span>← Back to Portfolio</span>
-        </button>
-        <h2 className={`text-4xl ${playfair.className}`}>{project.title}</h2>
-      </div>
-
       <div className="bg-[#252526] rounded-lg overflow-hidden">
         <div className="relative h-[500px] w-full">
           <Image
@@ -35,46 +25,51 @@ const ProjectDetails = ({ project, onBack }) => {
         </div>
         
         <div className="p-8 md:p-12">
-          <h2 className={`text-3xl font-semibold mb-4 ${playfair.className}`}>{project.title}</h2>
-          <p className="text-gray-300 mb-6">{project.longDescription || project.description}</p>
-          
-          <div className="mb-6">
-            <h3 className="text-xl mb-3">Technologies used</h3>
-            <div className="flex flex-wrap gap-2">
+        <button 
+          onClick={onBack}
+          className="text-blue-400 hover:text-blue-300 transition-colors"
+        >
+          <span>← Back to Portfolio</span>
+        </button>
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-4">
+            <h2 id="ProjectDetailTitle" className={`text-3xl font-semibold ${playfair.className}`}>
+              {project.title}
+            </h2>
+            <div className="flex gap-4">
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-6 py-2.5 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 
+                  rounded-lg transition-all duration-300 text-white font-medium 
+                  shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50 
+                  hover:-translate-y-0.5 active:translate-y-0"
+              >
+                View Code
+              </a>
+              {project.website && (
+                <a
+                  href={project.website}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-6 py-2.5 bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 
+                    rounded-lg transition-all duration-300 text-white font-medium 
+                    shadow-lg shadow-emerald-500/30 hover:shadow-emerald-500/50 
+                    hover:-translate-y-0.5 active:translate-y-0"
+                >
+                  Visit Website
+                </a>
+              )}
+            </div>
+          </div>
+          <div className="flex flex-wrap gap-2 mb-6">
               {project.tech.map((item, index) => (
                 <span key={index} className="text-sm px-3 py-1.5 bg-[#2d2d2e] rounded-full text-gray-300">
                   {item}
                 </span>
               ))}
             </div>
-          </div>
-
-          <div className="flex flex-wrap gap-4">
-            <a
-              href={project.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-6 py-2.5 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 
-                rounded-lg transition-all duration-300 text-white font-medium 
-                shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50 
-                hover:-translate-y-0.5 active:translate-y-0"
-            >
-              View Code
-            </a>
-            {project.website && (
-              <a
-                href={project.website}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-6 py-2.5 bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 
-                  rounded-lg transition-all duration-300 text-white font-medium 
-                  shadow-lg shadow-emerald-500/30 hover:shadow-emerald-500/50 
-                  hover:-translate-y-0.5 active:translate-y-0"
-              >
-                Visit Website
-              </a>
-            )}
-          </div>
+          <p className="text-gray-300 mb-6">{project.longDescription || project.description}</p>
         </div>
       </div>
     </>
@@ -148,14 +143,9 @@ export default function Portfolio() {
     }
   }, [showGrid, projectId, lastClickedProject]);
 
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
-  };
 
   const scrollToRef = (ref) => {
+    if (!ref?.current) return;
     ref.current.scrollIntoView({
       behavior: 'smooth',
       block: 'start'
@@ -257,7 +247,7 @@ export default function Portfolio() {
     setTimeout(() => {
       router.push(`/?section=portfolio&project=${slug}`);
     }, 300);
-    scrollToTop();
+    scrollToRef(portfolioRef);
   };
 
   const handleBack = () => {
