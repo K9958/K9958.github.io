@@ -14,7 +14,7 @@ const ProjectDetails = ({ project, onBack }) => {
   return (
     <>
       <div className="bg-[#252526] rounded-lg overflow-hidden">
-        <div className="relative h-[500px] w-full">
+        <div className="relative h-[300px] lg:h-[500px] sm:h-[400px] w-full">
           <Image
             src={project.image}
             alt={project.title}
